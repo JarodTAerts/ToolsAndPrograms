@@ -37,6 +37,9 @@ public class Main {
         System.exit(0);
     }
 
+    /**
+     * Function to print out help for all of the functions in this program
+     */
     public static void PrintHelp(){
         System.out.println("Command\t\t|\t\tDescription");
         System.out.println("-------\t\t|\t\t-----------");
@@ -48,24 +51,46 @@ public class Main {
 
     }
 
+    /**
+     * Function to get input from the user as to what bundle the file they are processing deals with
+     * @param reader reader to get input from the user
+     * @return
+     */
     public static int GetBundleInt(Scanner reader){
         System.out.print("Enter the number of the bundle this script runs: ");
         int bundleInt=reader.nextInt();
         return bundleInt;
     }
 
+    /**
+     * Function to get the path of the input file to be processed
+     * @param reader reader to get input from the user
+     * @return
+     */
     public static String GetInputFileName(Scanner reader){
         System.out.print("What is the absolute path of the input file: ");
         String inputFile=reader.nextLine();
         return inputFile;
     }
 
+    /**
+     * Function to get the output file where the processed file will be saved, can be the same as the input file
+     * @param reader reader to get input from the user
+     * @return
+     */
     public static String GetOutputFileName(Scanner reader){
         System.out.print("What is the absolute path of the output file: ");
         String outputFile=reader.nextLine();
         return outputFile;
     }
 
+    /**
+     * Function to reverse a run bundle script as formatted by me when doing flair research
+     * This will not reverse normal files
+     * @param inputFile path of the input file
+     * @param outputFile path of the output file
+     * @return
+     */
     public static boolean ReverseRunBundleScript(String inputFile,String outputFile){
         try {
 
@@ -79,11 +104,23 @@ public class Main {
         }
     }
 
+    /**
+     * Function to both reverse a run bundle script and change all the cp commands to rm commands for the apk files
+     * @param inputFile path of the input file
+     * @param outputFile path of the output file
+     * @param bundleInt int that is what bundle of apks this script deals with
+     */
     public static void ReverseAndRmScript(String inputFile,String outputFile, int bundleInt){
         ReverseRunBundleScript(inputFile,outputFile);
         CpToRmFile(outputFile,outputFile,bundleInt);
     }
 
+    /**
+     * Function to read all the lines from a file and put them into a List of strings
+     * @param filename path of the file to be read into the list
+     * @return
+     * @throws IOException
+     */
     public static List<String> ReadLines(String filename) throws IOException {
         FileReader fileReader=new FileReader(filename);
         BufferedReader bufferedReader=new BufferedReader(fileReader);
@@ -99,6 +136,11 @@ public class Main {
         return lines;
     }
 
+    /**
+     * Function to flip the lines of a file using the format of the bundle shell scripts
+     * @param lines List of lines from the original file
+     * @return
+     */
     public static List<String> ReverseLines(List<String> lines){
 
         List<String> reversedLines=new ArrayList<>();
@@ -116,6 +158,12 @@ public class Main {
         return reversedLines;
     }
 
+    /**
+     * Function to print a list of string to an output file
+     * @param outputFile path to output file
+     * @param lines list of string to be printed to an output file
+     * @throws IOException
+     */
     public static void PrintToFile(String outputFile, List<String> lines) throws IOException{
         PrintWriter writer=new PrintWriter(outputFile);
         for(String line:lines){
@@ -126,6 +174,12 @@ public class Main {
         return;
     }
 
+    /**
+     * Function that takes an input run bundle script file and converts all the cp commands to rm commands
+     * @param inputFile path of the file to be processed
+     * @param outputFile path of where the processed file will be saved
+     * @param bundleInt int representing what bundle of apks this file deals with
+     */
     public static void CpToRmFile(String inputFile,String outputFile, int bundleInt){
 
         try {
@@ -145,6 +199,12 @@ public class Main {
         }
     }
 
+    /**
+     * Function that takes a line with a cp commands and converts it to a line with an rm commands on the same apk file
+     * @param line string of the line with the cp command
+     * @param apkBundle int of the bundle where the apk the command deals with is
+     * @return
+     */
     public static String CpToRmLine(String line, int apkBundle){
         String startString="apk"+apkBundle;
         String endString="./";
