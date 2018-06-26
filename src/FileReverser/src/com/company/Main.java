@@ -16,17 +16,17 @@ public class Main {
         System.out.println("Welcome to Jarod's Java File Utils. Use 'help' to get help.");
         while(!nextCommand.equals("exit")){
             if(nextCommand.equals("revRBS")){
-                ReverseRunBundleScript(GetInputFileName(reader),GetOutputFileName(reader));
+                RunBundleScriptUtils.ReverseBundleScript(GetInputFileName(reader),GetOutputFileName(reader));
             }
             if(nextCommand.equals("help")){
                 PrintHelp();
             }
             if(nextCommand.equals("cpToRm")){
 
-                CpToRmFile(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
+                RunBundleScriptUtils.CopyToRemoveCommandForFile(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
             }
             if(nextCommand.equals("Rev&Rm")){
-                ReverseAndRmScript(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
+                RunBundleScriptUtils.ReverseAndSwitchToRemoveCommand(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
             }
 
             System.out.print("Enter command: ");
@@ -84,139 +84,5 @@ public class Main {
         return outputFile;
     }
 
-    /**
-     * Function to reverse a run bundle script as formatted by me when doing flair research
-     * This will not reverse normal files
-     * @param inputFile path of the input file
-     * @param outputFile path of the output file
-     * @return
-     */
-    public static boolean ReverseRunBundleScript(String inputFile,String outputFile){
-        try {
 
-            PrintToFile(outputFile,ReverseLines(ReadLines(inputFile)));
-            System.out.println("Reverse successful! Output contained in: "+outputFile);
-            return true;
-        }catch( IOException e){
-            System.out.println("Reverse Failed due to a problem. Sorry there is no more information. If you are using this program you are probably Jarod." +
-                    "Just look at the source and figure it out.");
-            return false;
-        }
-    }
-
-    /**
-     * Function to both reverse a run bundle script and change all the cp commands to rm commands for the apk files
-     * @param inputFile path of the input file
-     * @param outputFile path of the output file
-     * @param bundleInt int that is what bundle of apks this script deals with
-     */
-    public static void ReverseAndRmScript(String inputFile,String outputFile, int bundleInt){
-        ReverseRunBundleScript(inputFile,outputFile);
-        CpToRmFile(outputFile,outputFile,bundleInt);
-    }
-
-    /**
-     * Function to read all the lines from a file and put them into a List of strings
-     * @param filename path of the file to be read into the list
-     * @return
-     * @throws IOException
-     */
-    public static List<String> ReadLines(String filename) throws IOException {
-        FileReader fileReader=new FileReader(filename);
-        BufferedReader bufferedReader=new BufferedReader(fileReader);
-        List<String> lines=new ArrayList<>();
-        String line=null;
-
-        while((line=bufferedReader.readLine())!=null){
-            lines.add(line);
-        }
-        bufferedReader.close();
-        fileReader.close();
-
-        return lines;
-    }
-
-    /**
-     * Function to flip the lines of a file using the format of the bundle shell scripts
-     * @param lines List of lines from the original file
-     * @return
-     */
-    public static List<String> ReverseLines(List<String> lines){
-
-        List<String> reversedLines=new ArrayList<>();
-        for(int i=50;i>0;i--) {
-            for (String line : lines) {
-                if (line.equals("#"+i)){
-                    int start=lines.indexOf(line);
-                    for(int j=start;j<start+4;j++) {
-                        reversedLines.add(lines.get(j));
-                    }
-                }
-            }
-        }
-
-        return reversedLines;
-    }
-
-    /**
-     * Function to print a list of string to an output file
-     * @param outputFile path to output file
-     * @param lines list of string to be printed to an output file
-     * @throws IOException
-     */
-    public static void PrintToFile(String outputFile, List<String> lines) throws IOException{
-        PrintWriter writer=new PrintWriter(outputFile);
-        for(String line:lines){
-            writer.println(line);
-        }
-        writer.close();
-
-        return;
-    }
-
-    /**
-     * Function that takes an input run bundle script file and converts all the cp commands to rm commands
-     * @param inputFile path of the file to be processed
-     * @param outputFile path of where the processed file will be saved
-     * @param bundleInt int representing what bundle of apks this file deals with
-     */
-    public static void CpToRmFile(String inputFile,String outputFile, int bundleInt){
-
-        try {
-            List<String> lines = ReadLines(inputFile);
-            for(String line:lines){
-                if(line.startsWith("cp")){
-                    String newLine=CpToRmLine(line,bundleInt);
-                    lines.set(lines.indexOf(line),newLine);
-                }
-            }
-
-            PrintToFile(outputFile,lines);
-            System.out.println("Reverse successful! Output contained in: "+outputFile);
-        }catch(IOException e){
-            System.out.println("Cp To Rm failed. Sorry there is no more information. If you are using this program you are probably Jarod." +
-                    "Just look at the source and figure it out.");
-        }
-    }
-
-    /**
-     * Function that takes a line with a cp commands and converts it to a line with an rm commands on the same apk file
-     * @param line string of the line with the cp command
-     * @param apkBundle int of the bundle where the apk the command deals with is
-     * @return
-     */
-    public static String CpToRmLine(String line, int apkBundle){
-        String startString="apk"+apkBundle;
-        String endString="./";
-
-        int startIndex=line.indexOf(startString);
-        int endIndex=line.indexOf(endString);
-
-        String apkName=line.substring(startIndex+4,endIndex);
-        String path=line.substring(endIndex);
-
-        String newLine="rm "+path+apkName;
-
-        return newLine;
-    }
 }
