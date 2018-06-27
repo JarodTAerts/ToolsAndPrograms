@@ -25,8 +25,10 @@ public class Main {
 
                 RunBundleScriptUtils.CopyToRemoveCommandForFile(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
             }
-            if(nextCommand.equals("Rev&Rm")){
+            if(nextCommand.equals("rev&Rm")){
                 RunBundleScriptUtils.ReverseAndSwitchToRemoveCommand(GetInputFileName(reader),GetOutputFileName(reader),GetBundleInt(reader));
+            }else if(nextCommand.equals("revFil")){
+                GeneralUtils.ReverseLinesOfFile(GetInputFileName(reader),GetOutputFileName(reader));
             }
 
             System.out.print("Enter command: ");
@@ -47,7 +49,9 @@ public class Main {
         System.out.println("help\t\t|\t\tShows this page");
         System.out.println("exit\t\t|\t\tExits the program");
         System.out.println("cpToRm\t\t|\t\tConverts a RunBundle Shell script from increasing apps to decreasing them.");
-        System.out.println("Rev&Rm\t\t|\t\tBoth Reverses a file and converts it to run decreasing. Combination of revRBS and cpToRm");
+        System.out.println("rev&Rm\t\t|\t\tBoth Reverses a file and converts it to run decreasing. Combination of revRBS and cpToRm");
+        System.out.println("revFil\t\t|\t\tReverse the lines of any file");
+
 
     }
 

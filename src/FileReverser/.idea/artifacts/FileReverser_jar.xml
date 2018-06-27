@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="FileReverser:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/FileReverser_jar</output-path>
+    <output-path>$PROJECT_DIR$/../../Apps</output-path>
     <root id="archive" name="FileReverser.jar">
       <element id="module-output" name="FileUtils" />
     </root>

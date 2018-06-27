@@ -46,8 +46,18 @@ public class GeneralUtils {
         return lines;
     }
 
+    public static void ReverseLinesOfFile(String inputFile, String outputFile){
+        try {
+            PrintToFile(outputFile, ReverseLines(ReadLines(inputFile)));
+        }catch(IOException e){
+            System.out.println("Reverse Failed due to a problem. Sorry there is no more information. If you are using this program you are probably Jarod." +
+                    "Just look at the source and figure it out.");
+            return;
+        }
+    }
+
     /**
-     * Function to flip the lines of a file using the format of the bundle shell scripts
+     * Function to flip the lines of a list using the format of the bundle shell scripts
      * @param lines List of lines from the original file
      * @return
      */
