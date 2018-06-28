@@ -1,1 +1,0 @@
-C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\OfflineWikipedia.UWP.csproj;x86
