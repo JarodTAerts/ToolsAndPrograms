@@ -1,0 +1,13 @@
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.deps.json
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.csprojAssemblyReference.cache
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.csproj.CoreCompileInputs.cache
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.App.xaml.g.cs
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.Views.MainPage.xaml.g.cs
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.AssemblyInfoInputs.cache
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.AssemblyInfo.cs
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.Views.StartPage.xaml.g.cs
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\obj\Debug\netstandard2.0\OfflineWikipedia.Views.SettingsPage.xaml.g.cs

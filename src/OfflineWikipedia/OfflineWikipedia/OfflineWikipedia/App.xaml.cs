@@ -24,13 +24,26 @@ namespace OfflineWikipedia
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/StartPage");
+        }
+        
+        protected void InitializeSettings()
+        {
+            if (!App.Current.Properties.ContainsKey("OpenedBefore"))
+            {
+                App.Current.Properties["OpenedBefore"] = true;
+                App.Current.Properties["NumberOfArticles"] = 5;
+                App.Current.Properties["DownloadOverCell"]= false;
+                App.Current.Properties["DownloadImages"] = true;
+            }
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<StartPage>();
+            containerRegistry.RegisterForNavigation<SettingsPage>();
         }
     }
 }

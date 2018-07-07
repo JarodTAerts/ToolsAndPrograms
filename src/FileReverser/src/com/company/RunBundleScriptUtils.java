@@ -93,6 +93,8 @@ public class RunBundleScriptUtils {
      */
     public static String CopyToRemoveCommandForLine(String line, int apkBundle){
         String startString="apk"+apkBundle;
+        if(apkBundle==3)
+            startString="akp"+apkBundle;
         String endString="./";
 
         int startIndex=line.indexOf(startString);

@@ -2,10 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OfflineWikipedia.Views.MainPage"
-             Title="{Binding Title}">
+             Title="Search and Download"
+             >
+    
+    <ContentView BackgroundColor="WhiteSmoke">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,15,0,15">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
 
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="Search Topic" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding EntryText}"  PlaceholderColor="LightGray"/>
+                    <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding SearchButtonClickedCommand}"/>
+                
+                <ScrollView VerticalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Label Text="{Binding ReturnedText}" TextColor="DarkGray"/>
+                </ScrollView>
+
+                <ActivityIndicator Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsVisible="{Binding IsSearching}" IsRunning="{Binding IsSearching}"/>
+
+                <ListView ItemsSource="{Binding SearchResult.Items}" IsVisible="{Binding ResultsReturned}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                          BackgroundColor="CornflowerBlue" HasUnevenRows="True" SelectedItem="{Binding SelectedItem}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" BackgroundColor="White">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Title: " FontAttributes="Bold"/>
+                                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Size(Bytes): " FontAttributes="Bold"/>
+                                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Size}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Some Text: " FontAttributes="Bold"/>
+                                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Snippet}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout IsVisible="{Binding ResultsReturned}" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Button Text="Download and add to your Library" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentView>
 </ContentPage>
