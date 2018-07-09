@@ -13,12 +13,12 @@
             
             <StackLayout Orientation="Horizontal">
                 <Label Text="Download over Cellular: " VerticalOptions="CenterAndExpand"/>
-                <Switch x:Name="CellDownloadSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="CellDownloadSwitch_PropertyChanged" IsToggled="{Binding DownloadOverCeullular}"/>
+                <Switch x:Name="CellDownloadSwitch" VerticalOptions="CenterAndExpand" IsToggled="{Binding DownloadOverCeullular}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Download Images: " VerticalOptions="CenterAndExpand"/>
-                <Switch x:Name="DownloadImagesSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="DownloadImagesSwitch_PropertyChanged" IsToggled="{Binding DownloadImages}"/>
+                <Switch x:Name="DownloadImagesSwitch" VerticalOptions="CenterAndExpand" IsToggled="{Binding DownloadImages}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">

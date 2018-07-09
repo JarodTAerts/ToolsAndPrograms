@@ -12,35 +12,5 @@ namespace OfflineWikipedia.Views
 
         }
 
-        private void CellDownloadSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName.Equals("IsToggled"))
-            {
-                if (Settings.DownloadOverCell)
-                {
-                    Settings.DownloadOverCell = false;
-                }
-                else
-                {
-                    Settings.DownloadOverCell = true;
-                }
-            }
-        }
-
-        private void DownloadImagesSwitch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName.Equals("IsToggled"))
-            {
-                if (Settings.DownloadImages)
-                {
-                    Settings.DownloadImages = false;
-                }
-                else
-                {
-                    Settings.DownloadImages = true;
-                }
-            }
-        }
-
     }
 }

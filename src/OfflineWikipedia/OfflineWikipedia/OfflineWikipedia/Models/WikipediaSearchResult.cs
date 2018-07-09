@@ -4,10 +4,15 @@ using System.Text;
 
 namespace LearningAPIs
 {
+    /// <summary>
+    /// This is a class to conntain a whole wikipedia search results. Containing a whole bunch of wikipedia search items
+    /// </summary>
     public class WikipediaSearchResult
     {
+        //Total number of articles found
         public int Totalhits { get; set; }
 
+        //List of example articles returned
         public List<WikipediaSearchItem> Items { get; set; }
 
         public override string ToString()

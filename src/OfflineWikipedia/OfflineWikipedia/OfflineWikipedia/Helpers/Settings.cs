@@ -45,5 +45,17 @@ namespace OfflineWikipedia.Helpers
                 AppSettings.AddOrUpdateValue("NumberOfResults", value);
             }
         }
+
+        public static bool FirstTimeOpened
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("FirstTimeOpened",true);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("FirstTimeOpened", value);
+            }
+        }
     }
 }

@@ -13,10 +13,13 @@ using System.Threading.Tasks;
 
 namespace OfflineWikipedia.ViewModels
 {
+    /// <summary>
+    /// Class that controls the functionality of the MainPage. The MainPage is the search and add page. The app started on this page and the name hasnt been changed
+    /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
-        public DelegateCommand SearchButtonClickedCommand { get; set; }
 
+        #region Properties and Bindings
         private WikipediaSearchResult _searchResult;
         public WikipediaSearchResult SearchResult
         {
@@ -59,39 +62,56 @@ namespace OfflineWikipedia.ViewModels
             get => _isSearching;
             set => SetProperty(ref _isSearching, value);
         }
+        #endregion
 
+        #region Delagate Commands
+        public DelegateCommand SearchButtonClickedCommand { get; set; }
+        #endregion
+
+        #region Constructor
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
         {
+            //Set properties to what they need to the the list doesnt show until results are loaded and set search text
             SearchButtonClickedCommand = new DelegateCommand(OnSearchButtonClicked);
             ResultsReturned = false;
             ReturnedText = "Search any topic you are interested in to get some results.";
             IsSearching = false;
         }
+        #endregion
 
+        #region Command Functions
+        /// <summary>
+        /// Function to handle when the search button is clicked
+        /// </summary>
         private async void OnSearchButtonClicked()
         {
-            Debug.WriteLine(App.Current.Properties.ContainsKey("NumberOfArticles"));
             try
             {
+                //Set is searching to true, get the number of articles to get as examples and call function to search fromm APIService
                 IsSearching = true;
                 int numberOfArticlesReturned = Settings.NumberOfResults;
                 SearchResult = await APIServices.SearchTopic(EntryText,numberOfArticlesReturned);
+                //Set is searching to false and set the returned text and show the list
                 IsSearching = false;
-                Debug.WriteLine(SearchResult.ToString());                
                 ReturnedText = "Total Articles: "+SearchResult.Totalhits+"\n\n"+SearchResult.Items.Count+" Example Article:";
                 ResultsReturned = true;
             }
             catch (Exception)
             {
+                //If there is an exception, probably due to internet connectivity then let them know and stop searching
                 ReturnedText = "Results could not be loaded. Internet connection is required for this functionality, please check your connection.";
                 IsSearching = false;
+                ResultsReturned = false;
             }
         }
 
-
+        /// <summary>
+        /// Function to handle when an item is selected from the list
+        /// </summary>
         private async void OnSelectedItemChanged()
         {
+            //If the item you selected is not null then use the storage service to save that article to storage
             if (SelectedItem != null)
             {
                 Debug.WriteLine("Starting Write to file...");
@@ -99,5 +119,6 @@ namespace OfflineWikipedia.ViewModels
                 Debug.WriteLine("Finished Write to file...");
             }
         }
+        #endregion
     }
 }

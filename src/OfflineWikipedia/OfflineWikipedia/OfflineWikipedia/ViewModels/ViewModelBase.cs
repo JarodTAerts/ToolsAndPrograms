@@ -7,6 +7,9 @@ using System.Text;
 
 namespace OfflineWikipedia.ViewModels
 {
+    /// <summary>
+    /// View Model base Class. Probably wont really work in this function
+    /// </summary>
     public class ViewModelBase : BindableBase, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }

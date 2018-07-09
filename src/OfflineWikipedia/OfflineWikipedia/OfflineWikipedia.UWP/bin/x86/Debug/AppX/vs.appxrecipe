@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>69624EB717C1FDF7DAFE55A348ABF16BEA3318BCC04D76F07BAD768BD767DF45</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>0174361E713DE14F7AB03DF39397B4C180A85DE832F6AF22342C9DDA514582B2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>31e6402e-0407-4419-a6c3-7c6d18576017_1.0.0.0_x86__mm77914cpbf52</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>31e6402e-0407-4419-a6c3-7c6d18576017_mm77914cpbf52!App</RegisteredUserModeAppID>
     <RegisteredPackageID>31e6402e-0407-4419-a6c3-7c6d18576017</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-09T02:18:19.204</Modified>
+      <Modified>2018-07-09T18:12:15.754</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\OfflineWikipedia.UWP.exe">
       <PackagePath>entrypoint\OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-09T02:18:17.507</Modified>
+      <Modified>2018-07-09T18:12:12.257</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\dryioc.dll\2.12.6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\DryIoc.dll">
       <PackagePath>DryIoc.dll</PackagePath>
@@ -745,7 +745,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.dll">
       <PackagePath>OfflineWikipedia.dll</PackagePath>
-      <Modified>2018-07-09T02:18:12.070</Modified>
+      <Modified>2018-07-09T18:12:06.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -791,11 +791,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-07-09T02:18:17.259</Modified>
+      <Modified>2018-07-09T18:12:11.983</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-07-09T02:18:17.260</Modified>
+      <Modified>2018-07-09T18:12:11.985</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -808,11 +808,11 @@
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-07T00:49:11.195</Modified>
+      <Modified>2018-07-09T18:12:14.534</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\OfflineWikipedia.UWP.exe">
       <PackagePath>OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-09T02:18:19.196</Modified>
+      <Modified>2018-07-09T18:12:15.740</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

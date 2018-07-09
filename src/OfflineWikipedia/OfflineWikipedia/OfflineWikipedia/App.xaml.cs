@@ -5,10 +5,14 @@ using OfflineWikipedia.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
+using OfflineWikipedia.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace OfflineWikipedia
 {
+    /// <summary>
+    /// Main class of overarching application
+    /// </summary>
     public partial class App : PrismApplication
     {
         /* 
@@ -29,15 +33,17 @@ namespace OfflineWikipedia
         
         protected void InitializeSettings()
         {
-            if (!App.Current.Properties.ContainsKey("OpenedBefore"))
+            if (Settings.FirstTimeOpened)
             {
-                App.Current.Properties["OpenedBefore"] = true;
-                App.Current.Properties["NumberOfArticles"] = 5;
-                App.Current.Properties["DownloadOverCell"]= false;
-                App.Current.Properties["DownloadImages"] = true;
+                //Maybe do something for the first time opened?
+                Settings.FirstTimeOpened = false;
             }
         }
 
+        /// <summary>
+        /// Function to set the navagation pages so that they can be used
+        /// </summary>
+        /// <param name="containerRegistry"></param>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
