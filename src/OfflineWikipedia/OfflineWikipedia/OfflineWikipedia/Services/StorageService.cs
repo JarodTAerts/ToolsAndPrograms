@@ -33,7 +33,7 @@ namespace OfflineWikipedia.Services
             string fileName= Path.Combine(dirPath,(title+".wik")); 
             //Write to file
             File.WriteAllText(fileName, HTMLText);
-            Debug.WriteLine("Wrote To file: " + dirPath + title);
+            Debug.WriteLine("Wrote To file: " + Path.Combine(dirPath, (title + ".wik")));
         }
  
         /// <summary>

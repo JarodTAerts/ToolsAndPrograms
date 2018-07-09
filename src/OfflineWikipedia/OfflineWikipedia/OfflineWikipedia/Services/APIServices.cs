@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,8 +58,8 @@ namespace LearningAPIs
         {
             //Create the client encode the title and get the html response then return it
             var client = new HttpClient();
-            string titleEncoded = HttpUtility.HtmlEncode(title);
-            string htmlStr = (string)await client.GetStringAsync(basePageUrl + titleEncoded);
+            Debug.WriteLine("Title: " + title);
+            string htmlStr = (string)await client.GetStringAsync(basePageUrl + title);
 
             return htmlStr;
         }

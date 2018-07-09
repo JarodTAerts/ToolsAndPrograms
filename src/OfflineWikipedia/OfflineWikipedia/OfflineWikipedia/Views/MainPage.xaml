@@ -57,7 +57,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout IsVisible="{Binding ResultsReturned}" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
-                    <Button Text="Download and add to your Library" VerticalOptions="CenterAndExpand"/>
+                    <Button Text="Download and add to your Library" Command="{Binding DownloadAllArticlesCommand}" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
             </Grid>
         </StackLayout>

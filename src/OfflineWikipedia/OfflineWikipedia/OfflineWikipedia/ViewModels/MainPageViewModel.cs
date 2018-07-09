@@ -69,6 +69,7 @@ namespace OfflineWikipedia.ViewModels
 
         #region Delagate Commands
         public DelegateCommand SearchButtonClickedCommand { get; set; }
+        public DelegateCommand DownloadAllArticlesCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -77,6 +78,7 @@ namespace OfflineWikipedia.ViewModels
         {
             //Set properties to what they need to the the list doesnt show until results are loaded and set search text
             SearchButtonClickedCommand = new DelegateCommand(OnSearchButtonClicked);
+            DownloadAllArticlesCommand = new DelegateCommand(OnDownloadAllClicked);
             ResultsReturned = false;
             ReturnedText = "Search any topic you are interested in to get some results.";
             IsSearching = false;
@@ -124,6 +126,24 @@ namespace OfflineWikipedia.ViewModels
                 IsSearching = false;
                 Debug.WriteLine("Finished Write to file...");
                 await _dialogService.DisplayAlertAsync("Article Added","Article \""+SelectedItem.Title+"\" has been downloaded and added to your library.","Ok");               
+            }
+        }
+
+        /// <summary>
+        /// Function to handle when the download all articles button is clicked
+        /// </summary>
+        private async void OnDownloadAllClicked()
+        {
+            if (SearchResult.Items != null)
+            {
+                IsSearching = true;
+                ReturnedText = "Downloading "+SearchResult.Totalhits+" Articles...";
+                foreach(WikipediaSearchItem i in SearchResult.Items)
+                {
+                   await StorageService.SaveHTMLFileToStorage(i.Title);
+                }
+                IsSearching = false;
+                await _dialogService.DisplayAlertAsync("Articles Added", SearchResult.Totalhits+" articles have been downloaded and added to your library.", "Ok");              
             }
         }
         #endregion
