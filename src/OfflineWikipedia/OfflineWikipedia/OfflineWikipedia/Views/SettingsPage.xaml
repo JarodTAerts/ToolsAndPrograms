@@ -13,17 +13,17 @@
             
             <StackLayout Orientation="Horizontal">
                 <Label Text="Download over Cellular: " VerticalOptions="CenterAndExpand"/>
-                <Switch x:Name="CellDownloadSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="CellDownloadSwitch_PropertyChanged"/>
+                <Switch x:Name="CellDownloadSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="CellDownloadSwitch_PropertyChanged" IsToggled="{Binding DownloadOverCeullular}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Download Images: " VerticalOptions="CenterAndExpand"/>
-                <Switch x:Name="DownloadImagesSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="DownloadImagesSwitch_PropertyChanged"/>
+                <Switch x:Name="DownloadImagesSwitch" VerticalOptions="CenterAndExpand" PropertyChanged="DownloadImagesSwitch_PropertyChanged" IsToggled="{Binding DownloadImages}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Number of Returned Exmaple Articles: " VerticalOptions="CenterAndExpand"/>
-                <Picker x:Name="NumberOfResultsPicker" SelectedItem="{Binding PickedItem}">
+                <Picker x:Name="NumberOfResultsPicker" SelectedItem="{Binding PickedItemNumber}">
                     <Picker.Items>
                         <x:String>5</x:String>
                         <x:String>10</x:String>

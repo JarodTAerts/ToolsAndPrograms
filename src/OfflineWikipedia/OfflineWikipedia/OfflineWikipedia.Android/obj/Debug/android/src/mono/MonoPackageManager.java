@@ -111,6 +111,8 @@ class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"OfflineWikipedia.dll",
+		"Plugin.Settings.Abstractions.dll",
+		"Plugin.Settings.dll",
 		"Prism.dll",
 		"Prism.DryIoc.Forms.dll",
 		"Prism.Forms.dll",

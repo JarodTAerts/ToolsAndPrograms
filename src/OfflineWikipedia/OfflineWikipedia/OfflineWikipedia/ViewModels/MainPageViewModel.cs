@@ -90,12 +90,12 @@ namespace OfflineWikipedia.ViewModels
         }
 
 
-        private void OnSelectedItemChanged()
+        private async void OnSelectedItemChanged()
         {
             if (SelectedItem != null)
             {
                 Debug.WriteLine("Starting Write to file...");
-                StorageService.SaveHTMLFileToStorage(SelectedItem.Title);
+                await StorageService.SaveHTMLFileToStorage(SelectedItem.Title);
                 Debug.WriteLine("Finished Write to file...");
             }
         }

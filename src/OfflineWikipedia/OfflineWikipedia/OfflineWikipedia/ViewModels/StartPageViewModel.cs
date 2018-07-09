@@ -43,6 +43,7 @@ namespace OfflineWikipedia.ViewModels
         private async void OnBrowseLibrary()
         {
             Debug.WriteLine("Browse Library");
+            await NavigationService.NavigateAsync("BrowseLibraryPage");
         }
 
         private async void OnAddToLibrary()

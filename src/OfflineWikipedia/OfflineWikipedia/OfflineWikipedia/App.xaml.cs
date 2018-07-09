@@ -44,6 +44,8 @@ namespace OfflineWikipedia
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<StartPage>();
             containerRegistry.RegisterForNavigation<SettingsPage>();
+            containerRegistry.RegisterForNavigation<BrowseLibraryPage>();
+            containerRegistry.RegisterForNavigation<ViewArticlePage>();
         }
     }
 }
