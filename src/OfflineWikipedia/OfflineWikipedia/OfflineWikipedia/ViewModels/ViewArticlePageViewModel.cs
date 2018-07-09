@@ -28,12 +28,19 @@ namespace OfflineWikipedia.ViewModels
             get => _articleText;
             set => SetProperty(ref _articleText, value);
         }
+
+        private bool _isSearching;
+        public bool IsSearching
+        {
+            get => _isSearching;
+            set => SetProperty(ref _isSearching, value);
+        }
         #endregion
 
         #region Constructor
         public ViewArticlePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-
+            IsSearching = true;
         }
         #endregion
 
@@ -50,7 +57,9 @@ namespace OfflineWikipedia.ViewModels
             if (parameters.ContainsKey("TITLE"))
             {
                 ArticleTitle = (string)parameters.Where(i => i.Key == "TITLE").SingleOrDefault().Value;
+                IsSearching = true;
                 ArticleText = await StorageService.GetHTMLTextFromFile(ArticleTitle);
+                IsSearching = false;
             }
         }
         #endregion

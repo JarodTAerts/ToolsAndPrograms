@@ -107,7 +107,7 @@ namespace OfflineWikipedia.ViewModels
         {
             Debug.WriteLine("Searched something");
             //Filter the articles based on the search that you entered
-            SavedArticles = AllSavedArticles.Where(a => a.ToUpper().StartsWith(EntryText.ToUpper())).ToList();
+            SavedArticles = AllSavedArticles.Where(a => a.ToUpper().Contains(EntryText.ToUpper())).ToList();
         }
         #endregion
 

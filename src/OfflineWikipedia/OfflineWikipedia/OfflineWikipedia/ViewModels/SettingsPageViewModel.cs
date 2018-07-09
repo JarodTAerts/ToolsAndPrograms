@@ -58,7 +58,7 @@ namespace OfflineWikipedia.ViewModels
         /// </summary>
         private async void OnBackButton()
         {
-            await NavigationService.NavigateAsync("StartPage"); ;
+            await NavigationService.GoBackAsync();
         }
 
         /// <summary>
