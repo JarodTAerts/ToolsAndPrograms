@@ -72,10 +72,15 @@ C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Andro
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\OfflineWikipedia.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\bin\Debug\Plugin.Settings.Abstractions.dll.mdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\bin\Debug\Plugin.Settings.dll.mdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Plugin.Settings.Abstractions.dll.mdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Plugin.Settings.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\bin\Debug\OfflineWikipedia.Android.dll
-C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\OfflineWikipedia.pdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\OfflineWikipedia.Android.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Plugin.Settings.Abstractions.dll.mdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Plugin.Settings.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Xamarin.Forms.Core.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\Xamarin.Forms.Xaml.dll.mdb

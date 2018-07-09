@@ -6,6 +6,8 @@ C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Andro
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\mscorlib.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Newtonsoft.Json.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\OfflineWikipedia.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Plugin.Settings.Abstractions.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Plugin.Settings.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Prism.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Prism.DryIoc.Forms.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\Prism.Forms.dll
