@@ -9,7 +9,9 @@
     <ContentView>
         <StackLayout Padding="10">
             <ActivityIndicator IsVisible="{Binding IsSearching}" IsRunning="{Binding IsSearching}"/>
-            <Label Text="{Binding ArticleText}"/>
+            <ScrollView>
+                <Label Text="{Binding ArticleText}"/>
+            </ScrollView>
         </StackLayout>
     </ContentView>
 </ContentPage>

@@ -4,7 +4,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="OfflineWikipedia.Android" android:icon="@mipmap/ic_launcher" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+  <application android:label="YoWiki.Android" android:icon="@mipmap/ic_launcher" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/ic_launcher" android:label="OfflineWikipedia" android:theme="@style/MainTheme" android:name="md50634db19e55707b1473a3a29d2d3c008.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

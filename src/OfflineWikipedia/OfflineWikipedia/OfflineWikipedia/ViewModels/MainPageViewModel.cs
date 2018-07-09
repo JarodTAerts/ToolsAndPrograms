@@ -4,6 +4,7 @@ using OfflineWikipedia.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,6 +21,8 @@ namespace OfflineWikipedia.ViewModels
     {
 
         #region Properties and Bindings
+        private IPageDialogService _dialogService;
+
         private WikipediaSearchResult _searchResult;
         public WikipediaSearchResult SearchResult
         {
@@ -69,7 +72,7 @@ namespace OfflineWikipedia.ViewModels
         #endregion
 
         #region Constructor
-        public MainPageViewModel(INavigationService navigationService) 
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService dialog) 
             : base (navigationService)
         {
             //Set properties to what they need to the the list doesnt show until results are loaded and set search text
@@ -77,6 +80,7 @@ namespace OfflineWikipedia.ViewModels
             ResultsReturned = false;
             ReturnedText = "Search any topic you are interested in to get some results.";
             IsSearching = false;
+            _dialogService = dialog;
         }
         #endregion
 
@@ -115,8 +119,11 @@ namespace OfflineWikipedia.ViewModels
             if (SelectedItem != null)
             {
                 Debug.WriteLine("Starting Write to file...");
+                IsSearching = true;
                 await StorageService.SaveHTMLFileToStorage(SelectedItem.Title);
+                IsSearching = false;
                 Debug.WriteLine("Finished Write to file...");
+                await _dialogService.DisplayAlertAsync("Article Added","Article \""+SelectedItem.Title+"\" has been downloaded and added to your library.","Ok");               
             }
         }
         #endregion

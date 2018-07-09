@@ -23,7 +23,7 @@
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Number of Returned Exmaple Articles: " VerticalOptions="CenterAndExpand"/>
-                <Picker x:Name="NumberOfResultsPicker" SelectedItem="{Binding PickedItemNumber}">
+                <Picker x:Name="NumberOfResultsPicker" SelectedItem="{Binding PickedItemNumber}" HorizontalOptions="FillAndExpand">
                     <Picker.Items>
                         <x:String>5</x:String>
                         <x:String>10</x:String>
