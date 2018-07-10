@@ -65,6 +65,13 @@ namespace OfflineWikipedia.ViewModels
             get => _isSearching;
             set => SetProperty(ref _isSearching, value);
         }
+
+        private double _barProgress;
+        public double BarProgress
+        {
+            get => _barProgress;
+            set => SetProperty(ref _barProgress, value);
+        }
         #endregion
 
         #region Delagate Commands
@@ -137,13 +144,23 @@ namespace OfflineWikipedia.ViewModels
             if (SearchResult.Items != null)
             {
                 IsSearching = true;
-                ReturnedText = "Downloading "+SearchResult.Totalhits+" Articles...";
-                foreach(WikipediaSearchItem i in SearchResult.Items)
+
+                ReturnedText = "Fetching the names of all articles from Wikipedia.";
+                List<string> names=await APIServices.GetAllNamesFromSearch(EntryText,SearchResult.Totalhits);
+
+                Debug.WriteLine("Number of Article names: "+names.Count);
+                
+                for(int i = 0; i < names.Count; i++)
                 {
-                   await StorageService.SaveHTMLFileToStorage(i.Title);
+                    ReturnedText = "Downloading " + i + " out of "+names.Count+" Articles...";
+                    BarProgress = i / names.Count;
+                    await StorageService.SaveHTMLFileToStorage(names[i]);
+                    await HTMLHandler.CleanHTMLFile(names[i]);
                 }
+
                 IsSearching = false;
-                await _dialogService.DisplayAlertAsync("Articles Added", SearchResult.Totalhits+" articles have been downloaded and added to your library.", "Ok");              
+                ReturnedText = "Downloaded "+names.Count+" Articles.";
+                await _dialogService.DisplayAlertAsync("Articles Added", names.Count+" articles have been downloaded and added to your library.", "Ok");              
             }
         }
         #endregion

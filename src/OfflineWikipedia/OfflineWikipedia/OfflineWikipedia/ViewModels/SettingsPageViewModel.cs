@@ -1,7 +1,9 @@
 ﻿using OfflineWikipedia.Helpers;
+using OfflineWikipedia.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +17,8 @@ namespace OfflineWikipedia.ViewModels
 	public class SettingsPageViewModel : ViewModelBase
 	{
         #region Properties and Bindings
+        private IPageDialogService _dialogService;
+
         private string _pickedItemNumber;
         public string PickedItemNumber
         {
@@ -39,16 +43,19 @@ namespace OfflineWikipedia.ViewModels
 
         #region Delegate Commands
         public DelegateCommand BackButtonCommand { get; set; }
+        public DelegateCommand ClearArticlesCommand { get; set; }
         #endregion
 
         #region Constructor
-        public SettingsPageViewModel(INavigationService navigationService) : base(navigationService)
+        public SettingsPageViewModel(INavigationService navigationService, IPageDialogService dialog) : base(navigationService)
         {
             //Set the UI elements to the values stored in settings
             PickedItemNumber = Settings.NumberOfResults.ToString();
             DownloadOverCeullular = Settings.DownloadOverCell;
             DownloadImages = Settings.DownloadImages;
             BackButtonCommand = new DelegateCommand(OnBackButton);
+            ClearArticlesCommand = new DelegateCommand(OnClearArticles);
+            _dialogService = dialog;
         }
         #endregion
 
@@ -87,6 +94,13 @@ namespace OfflineWikipedia.ViewModels
         {
             Debug.WriteLine("Cellular: " + DownloadOverCeullular);
             Settings.DownloadOverCell = (DownloadOverCeullular);
+        }
+
+
+        private async void OnClearArticles()
+        {
+            await StorageService.ClearSavedArticles();
+            await _dialogService.DisplayAlertAsync("Articles Cleared", "All articles from your local library.", "Ok");
         }
         #endregion
 

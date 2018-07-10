@@ -1,4 +1,5 @@
 ﻿using LearningAPIs;
+using OfflineWikipedia.Helpers;
 using OfflineWikipedia.Models;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,12 @@ namespace OfflineWikipedia.Services
         /// <returns>Nothing</returns>
         public async static Task SaveHTMLFileToStorage(string title)
         {
+            Debug.WriteLine("Title: " + title);
             string HTMLText = "";
             //Call the API service to get the HTML text from wikipedia
             HTMLText = await APIServices.GetAllHTMLFromWikipediaArticle(title);
             //Get the path to the file where it will be stored
+            title = HTMLHandler.ReplaceColons(title);
             string fileName= Path.Combine(dirPath,(title+".wik")); 
             //Write to file
             File.WriteAllText(fileName, HTMLText);
@@ -43,9 +46,18 @@ namespace OfflineWikipedia.Services
         /// <returns>String that contains all the text from the file</returns>
         public async static Task<string> GetHTMLTextFromFile(string title)
         {
+            title = HTMLHandler.ReplaceColons(title);
             //Get the path of the file and get all the text
             string fileName = Path.Combine(dirPath, (title + ".wik"));
             return File.ReadAllText(fileName);
+        }
+
+        public async static Task WriteTextToFile(string title, string text)
+        {
+            title = HTMLHandler.ReplaceColons(title);
+            //Get the path of the file and get all the text
+            string fileName = Path.Combine(dirPath, (title + ".wik"));
+            File.WriteAllText(fileName,text);
         }
 
         /// <summary>
@@ -64,6 +76,16 @@ namespace OfflineWikipedia.Services
             }
 
             return results;
+        }
+
+        public async static Task ClearSavedArticles()
+        {
+            List<string> files = await GetNamesOfSavedArticles();
+            foreach(string s in files)
+            {
+                string fileName = Path.Combine(dirPath, (s + ".wik"));
+                File.Delete(fileName);
+            }
         }
     }
 }

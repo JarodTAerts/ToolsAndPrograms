@@ -1,4 +1,5 @@
-﻿using OfflineWikipedia.Services;
+﻿using OfflineWikipedia.Helpers;
+using OfflineWikipedia.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace OfflineWikipedia.ViewModels
 {
@@ -58,7 +60,7 @@ namespace OfflineWikipedia.ViewModels
             {
                 ArticleTitle = (string)parameters.Where(i => i.Key == "TITLE").SingleOrDefault().Value;
                 IsSearching = true;
-                ArticleText = await StorageService.GetHTMLTextFromFile(ArticleTitle);
+                ArticleText =await StorageService.GetHTMLTextFromFile(ArticleTitle);
                 IsSearching = false;
             }
         }

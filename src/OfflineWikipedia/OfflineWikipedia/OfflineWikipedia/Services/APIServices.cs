@@ -49,6 +49,33 @@ namespace LearningAPIs
             return result;
         }
 
+        public static async Task<List<string>> GetAllNamesFromSearch(string search, int totalHits)
+        {
+            List<string> names = new List<string>();
+            //Create the client and URL string and get a string of json text of the result of the search
+            var client = new HttpClient();
+            string searchEncoded = HttpUtility.HtmlEncode(search);
+            for (int i = 0; i < totalHits; i += 500)
+            {
+                string addon = "action=query&list=search&srsearch=" + searchEncoded + "&utf8=&format=json&srlimit=500&srwhat=text&srprop=size&sroffset="+i;
+                var jsonstr = await client.GetStringAsync(baseAPIUrl + addon);
+
+                //Create a JSON obejct with the string and get the search token and the number of hits token from it
+                JObject obj = JObject.Parse(jsonstr);
+                var token = (JArray)obj.SelectToken("query.search");
+
+                //Get a list of WikipediaSearchItems from the search token of the response
+                var searchItems = JsonConvert.DeserializeObject<List<WikipediaSearchItem>>(token.ToString());
+
+                foreach(WikipediaSearchItem item in searchItems)
+                {
+                    names.Add(item.Title);
+                }
+            }
+
+            return names;
+        }
+
         /// <summary>
         /// Function to get the HTML from a wikipedia article based on its title
         /// </summary>

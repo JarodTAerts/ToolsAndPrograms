@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfflineWikipedia.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,18 +17,14 @@ namespace LearningAPIs
         private string _snippet;
         public string Snippet {
             get => _snippet;
-            set => _snippet=StripHTML(value);
+            set => _snippet=HTMLHandler.SimpleHTMLStrip(value);
         }
         public DateTime Timestamp { get; set; }
 
         public override string ToString()
         {
-            return "\nTitle: " + Title + "\nWordCount: " + Wordcount + "\nSize: " + Size + "\nSnippet: " + StripHTML(Snippet) + "\nTime: " + Timestamp ;
+            return "\nTitle: " + Title + "\nWordCount: " + Wordcount + "\nSize: " + Size + "\nSnippet: " + HTMLHandler.StripHTML(Snippet) + "\nTime: " + Timestamp ;
         }
 
-        public string StripHTML(string input)
-        {
-            return Regex.Replace(input, "<.*?>", String.Empty);
-        }
     }
 }

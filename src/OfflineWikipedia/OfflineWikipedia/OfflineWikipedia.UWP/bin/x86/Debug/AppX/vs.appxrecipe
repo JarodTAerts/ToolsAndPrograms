@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-09T18:39:12.659</Modified>
+      <Modified>2018-07-10T20:14:07.170</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\OfflineWikipedia.UWP.exe">
       <PackagePath>entrypoint\OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-09T18:39:11.947</Modified>
+      <Modified>2018-07-10T20:14:05.727</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\dryioc.dll\2.12.6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\DryIoc.dll">
       <PackagePath>DryIoc.dll</PackagePath>
@@ -745,7 +745,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.dll">
       <PackagePath>OfflineWikipedia.dll</PackagePath>
-      <Modified>2018-07-09T18:39:06.895</Modified>
+      <Modified>2018-07-10T20:13:53.968</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -791,11 +791,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-07-09T18:39:11.794</Modified>
+      <Modified>2018-07-10T20:14:05.370</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-07-09T18:39:11.795</Modified>
+      <Modified>2018-07-10T20:14:05.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -812,7 +812,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\OfflineWikipedia.UWP.exe">
       <PackagePath>OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-09T18:39:12.654</Modified>
+      <Modified>2018-07-10T20:14:07.161</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
