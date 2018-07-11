@@ -107,7 +107,7 @@ namespace OfflineWikipedia.ViewModels
                 SearchResult = await APIServices.SearchTopic(EntryText,numberOfArticlesReturned);
                 //Set is searching to false and set the returned text and show the list
                 IsSearching = false;
-                ReturnedText = "Total Articles: "+SearchResult.Totalhits+"\n\n"+SearchResult.Items.Count+" Example Article:";
+                ReturnedText = "Total Articles: "+SearchResult.Totalhits+"\n\n"+SearchResult.Items.Count+" Example Articles:";
                 ResultsReturned = true;
             }
             catch (Exception)

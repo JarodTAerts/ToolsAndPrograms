@@ -26,9 +26,16 @@ namespace OfflineWikipedia.Helpers
             input = Regex.Replace(input, "<script>.*</script>", String.Empty);
             input = Regex.Replace(input, "<script>.*\n.*</script>", String.Empty);
             input = Regex.Replace(input, "<.*?>", String.Empty);
-            input = HttpUtility.HtmlDecode(Regex.Replace(input, "<.*->", String.Empty));
+            input = HttpUtility.HtmlDecode(Regex.Replace(input, "<.*?->", String.Empty));
             input = CutOutBeforeString(input,"Jump to search");
-            input = CutOutAfterString(input, "References");
+            input = CutOutAfterStringReference(input, "References[edit]");
+            input = CutOutAfterStringReference(input, "References");
+            input = CutOutAfterString(input, "<!-- \nNewPP limit report");
+            input = CutOutAfterString(input, "Notes[edit]");
+            input = Regex.Replace(input, "\nv\nt\ne\n",String.Empty);
+            input = Regex.Replace(input, "\\[edit\\]", ":\n");
+            input = CutOutAfterString(input, "See also:");
+            input = Regex.Replace(input, "\n{3,}", "\n\n");
             return input.Trim();
         }
 
@@ -48,7 +55,7 @@ namespace OfflineWikipedia.Helpers
             return input.Substring(indexOfSub+cutString.Length);
         }
 
-        public static string CutOutAfterString(string input, string cutString)
+        public static string CutOutAfterStringReference(string input, string cutString)
         {
             int indexOfSub = input.IndexOf(cutString);
             if (indexOfSub > 0)
@@ -61,6 +68,18 @@ namespace OfflineWikipedia.Helpers
             }
                 return input;
             
+        }
+
+        public static string CutOutAfterString(string input, string cutString)
+        {
+            int indexOfSub = input.IndexOf(cutString);
+                if (indexOfSub > 0)
+                {
+                    return input.Substring(0, indexOfSub);
+                }
+
+            return input;
+
         }
     }
 }
