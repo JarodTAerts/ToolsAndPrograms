@@ -1,6 +1,7 @@
 ﻿using LearningAPIs;
 using OfflineWikipedia.Helpers;
 using OfflineWikipedia.Services;
+using Plugin.Notifications;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -160,8 +161,16 @@ namespace OfflineWikipedia.ViewModels
 
                 IsSearching = false;
                 ReturnedText = "Downloaded "+names.Count+" Articles.";
-                await _dialogService.DisplayAlertAsync("Articles Added", names.Count+" articles have been downloaded and added to your library.", "Ok");              
+                await SendAlertOrNotification("Articles Added", names.Count+" articles have been downloaded and added to your library.", "Ok");              
             }
+        }
+        #endregion
+
+        #region Helper Functions
+         private async Task SendAlertOrNotification(string title, string text, string buttonText)
+        {
+            await _dialogService.DisplayAlertAsync(title, text, buttonText);
+            //await CrossNotifications.Current.Send(new Notification() { Title=title, Message=text });
         }
         #endregion
     }

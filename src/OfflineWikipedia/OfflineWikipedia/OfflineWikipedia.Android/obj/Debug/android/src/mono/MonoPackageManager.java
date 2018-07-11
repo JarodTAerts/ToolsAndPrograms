@@ -111,11 +111,19 @@ class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"OfflineWikipedia.dll",
+		"Plugin.Notifications.Abstractions.dll",
+		"Plugin.Notifications.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
 		"Prism.dll",
 		"Prism.DryIoc.Forms.dll",
 		"Prism.Forms.dll",
+		"SQLite-net.dll",
+		"SQLitePCLRaw.batteries_green.dll",
+		"SQLitePCLRaw.batteries_v2.dll",
+		"SQLitePCLRaw.core.dll",
+		"SQLitePCLRaw.lib.e_sqlite3.dll",
+		"SQLitePCLRaw.provider.e_sqlite3.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",
@@ -136,6 +144,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"XamarinShortcutBadger.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

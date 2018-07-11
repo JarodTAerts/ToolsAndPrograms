@@ -2,6 +2,12 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "dependencies": {
@@ -63,6 +69,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -414,6 +434,18 @@
     }
   },
   "libraries": {
+    "Acr.Notifications/4.0.0": {
+      "sha512": "J7RaTR4gaANli+sG5ZPIfT314lxodD/6zyzWthxereHrVw61ALDIVKTZBdrXbbYaDOSSJMmX+fWzTggAwEvd0w==",
+      "type": "package",
+      "path": "acr.notifications/4.0.0",
+      "files": [
+        "acr.notifications.4.0.0.nupkg.sha512",
+        "acr.notifications.nuspec",
+        "nuget.exe",
+        "pack.cmd",
+        "push.cmd"
+      ]
+    },
     "DryIoc.dll/2.12.6": {
       "sha512": "jmqwiN8591mEgDp7FU/HrOEzrHsrL0STNZQRMVh5BgvyNiaSu0hoxVXcZC9BwbEugCcOLdO6mUrcJPY3q/dYEQ==",
       "type": "package",
@@ -618,6 +650,36 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.Notifications/4.0.0": {
+      "sha512": "GJEFQNeRE/9b8nFgayloH3wYoXTPqmZA07Tv8IGb3n1so+u1bYCDwek8m+UiOlvwa91hFpIay7c2CCUnA4mElw==",
+      "type": "package",
+      "path": "plugin.notifications/4.0.0",
+      "files": [
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Notifications.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.deps.json",
+        "lib/netstandard1.0/Plugin.Notifications.dll",
+        "lib/netstandard1.0/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.Abstractions.dll",
+        "lib/uap10/Plugin.Notifications.Abstractions.pdb",
+        "lib/uap10/Plugin.Notifications.dll",
+        "lib/uap10/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.pri",
+        "plugin.notifications.4.0.0.nupkg.sha512",
+        "plugin.notifications.nuspec"
       ]
     },
     "Prism.Core/7.0.0.396": {
@@ -2253,6 +2315,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Acr.Notifications >= 4.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 11.0.2",
       "Prism.DryIoc.Forms >= 7.0.0.396",
@@ -2301,6 +2364,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Acr.Notifications": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

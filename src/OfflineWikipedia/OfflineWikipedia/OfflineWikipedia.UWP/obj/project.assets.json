@@ -2,6 +2,12 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.16299": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -228,6 +234,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -250,6 +265,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -288,6 +319,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -354,6 +394,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -368,6 +409,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -595,6 +642,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -617,6 +673,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -655,6 +727,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -895,6 +976,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -909,6 +991,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm-aot": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -1136,6 +1224,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -1158,6 +1255,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -1196,6 +1309,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.0.6": {
@@ -1437,6 +1559,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -1451,6 +1574,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm64-aot": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -1677,6 +1806,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -1699,6 +1837,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -1737,6 +1891,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -1803,6 +1966,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -1817,6 +1981,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -2044,6 +2214,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -2066,6 +2245,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -2104,6 +2299,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -2344,6 +2548,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -2358,6 +2563,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64-aot": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -2585,6 +2796,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -2607,6 +2827,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -2645,6 +2881,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -2886,6 +3131,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -2900,6 +3146,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -3127,6 +3379,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -3149,6 +3410,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -3187,6 +3464,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -3427,6 +3713,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -3441,6 +3728,12 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86-aot": {
+      "Acr.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Notifications": "4.0.0"
+        }
+      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "compile": {
@@ -3668,6 +3961,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -3690,6 +3992,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Notifications/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "[1.4.1, 2.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "QueryString.NET": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10/Plugin.Notifications.Abstractions.dll": {},
+          "lib/uap10/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -3728,6 +4046,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Forms.dll": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -3969,6 +4296,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.Notifications": "4.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Prism.DryIoc.Forms": "7.0.0.396",
           "Xam.Plugins.Settings": "3.1.1",
@@ -3984,6 +4312,18 @@
     }
   },
   "libraries": {
+    "Acr.Notifications/4.0.0": {
+      "sha512": "J7RaTR4gaANli+sG5ZPIfT314lxodD/6zyzWthxereHrVw61ALDIVKTZBdrXbbYaDOSSJMmX+fWzTggAwEvd0w==",
+      "type": "package",
+      "path": "acr.notifications/4.0.0",
+      "files": [
+        "acr.notifications.4.0.0.nupkg.sha512",
+        "acr.notifications.nuspec",
+        "nuget.exe",
+        "pack.cmd",
+        "push.cmd"
+      ]
+    },
     "DryIoc.dll/2.12.6": {
       "sha512": "jmqwiN8591mEgDp7FU/HrOEzrHsrL0STNZQRMVh5BgvyNiaSu0hoxVXcZC9BwbEugCcOLdO6mUrcJPY3q/dYEQ==",
       "type": "package",
@@ -6270,6 +6610,30 @@
         "runtime.json"
       ]
     },
+    "Microsoft.Toolkit.Uwp.Notifications/1.4.1": {
+      "sha512": "Xi32HrnQLgas2Tz4a/3LZGZvY+4KZnlQZQdPFkK0G3AfMHKDxnREI/QKUOyLK6zxr62uaCME18pyStu8ueP1FA==",
+      "type": "package",
+      "path": "microsoft.toolkit.uwp.notifications/1.4.1",
+      "files": [
+        "build/native/Microsoft.Toolkit.Uwp.Notifications.targets",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pri",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.winmd",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.winmd.xml",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "microsoft.toolkit.uwp.notifications.1.4.1.nupkg.sha512",
+        "microsoft.toolkit.uwp.notifications.nuspec"
+      ]
+    },
     "NETStandard.Library/2.0.1": {
       "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "type": "package",
@@ -6426,6 +6790,36 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "Plugin.Notifications/4.0.0": {
+      "sha512": "GJEFQNeRE/9b8nFgayloH3wYoXTPqmZA07Tv8IGb3n1so+u1bYCDwek8m+UiOlvwa91hFpIay7c2CCUnA4mElw==",
+      "type": "package",
+      "path": "plugin.notifications/4.0.0",
+      "files": [
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Notifications.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.deps.json",
+        "lib/netstandard1.0/Plugin.Notifications.dll",
+        "lib/netstandard1.0/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.Abstractions.dll",
+        "lib/uap10/Plugin.Notifications.Abstractions.pdb",
+        "lib/uap10/Plugin.Notifications.dll",
+        "lib/uap10/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.pri",
+        "plugin.notifications.4.0.0.nupkg.sha512",
+        "plugin.notifications.nuspec"
+      ]
+    },
     "Prism.Core/7.0.0.396": {
       "sha512": "XxPmXiA+v/D6zUeAUwSz7GgWNIbzyLLgkP32vDr6fGfv/YPg8CRkmkf+MkP+cxXKdUsqezxXgRRwMUcjWRqWMw==",
       "type": "package",
@@ -6468,6 +6862,21 @@
         "lib/netstandard2.0/Prism.Forms.xml",
         "prism.forms.7.0.0.396.nupkg.sha512",
         "prism.forms.nuspec"
+      ]
+    },
+    "QueryString.NET/1.0.0": {
+      "sha512": "5iVQSmK0X6iTMQWKbegV92lfAcCjJXFduL6CKVReJDzdWmH6k10aztDRXE9cWU4YW1tXsCOfkwqRCG/8Tod9aA==",
+      "type": "package",
+      "path": "querystring.net/1.0.0",
+      "files": [
+        "lib/dotnet/QueryString.NETCore.XML",
+        "lib/dotnet/QueryString.NETCore.dll",
+        "lib/dotnet/QueryString.NETCore.pdb",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.dll",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.pdb",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.xml",
+        "querystring.net.1.0.0.nupkg.sha512",
+        "querystring.net.nuspec"
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.0.6": {
@@ -7843,6 +8252,7 @@
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
+      "Acr.Notifications >= 4.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.6",
       "Newtonsoft.Json >= 11.0.2",
       "OfflineWikipedia >= 1.0.0",
@@ -7893,6 +8303,10 @@
     "frameworks": {
       "uap10.0.16299": {
         "dependencies": {
+          "Acr.Notifications": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.0.6, )"
