@@ -37,3 +37,8 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 XamarinShortcutBadger
+netstandard
+System.ComponentModel
+System.Diagnostics.Tools
+System.Reflection.Extensions
+System.Resources.ResourceManager
