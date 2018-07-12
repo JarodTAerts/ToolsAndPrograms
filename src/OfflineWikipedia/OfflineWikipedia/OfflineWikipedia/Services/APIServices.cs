@@ -85,7 +85,7 @@ namespace LearningAPIs
         {
             //Create the client encode the title and get the html response then return it
             var client = new HttpClient();
-            Debug.WriteLine("Title: " + title);
+            //Debug.WriteLine("Title: " + title);
             string htmlStr = (string)await client.GetStringAsync(basePageUrl + title);
 
             return htmlStr;

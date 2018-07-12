@@ -57,5 +57,17 @@ namespace OfflineWikipedia.Helpers
                 AppSettings.AddOrUpdateValue("FirstTimeOpened", value);
             }
         }
+
+        public static double AverageDownloadAndProcessingTimePerFile
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("AverageDownloadAndProcessingTimePerFile", 500.0);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("AverageDownloadAndProcessingTimePerFile", value);
+            }
+        }
     }
 }

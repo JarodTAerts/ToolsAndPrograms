@@ -27,7 +27,7 @@ namespace OfflineWikipedia.Services
         /// <returns>Nothing</returns>
         public async static Task SaveHTMLFileToStorage(string title)
         {
-            Debug.WriteLine("Title: " + title);
+            //Debug.WriteLine("Title: " + title);
             string HTMLText = "";
             //Call the API service to get the HTML text from wikipedia
             HTMLText = await APIServices.GetAllHTMLFromWikipediaArticle(title);
@@ -36,7 +36,7 @@ namespace OfflineWikipedia.Services
             string fileName= Path.Combine(dirPath,(title+".wik")); 
             //Write to file
             File.WriteAllText(fileName, HTMLText);
-            Debug.WriteLine("Wrote To file: " + Path.Combine(dirPath, (title + ".wik")));
+            //Debug.WriteLine("Wrote To file: " + Path.Combine(dirPath, (title + ".wik")));
         }
  
         /// <summary>

@@ -39,7 +39,7 @@
                                 <Frame HasShadow="True" BackgroundColor="White">
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Title: " FontAttributes="Bold"/>
+                                            <Label Text="Title: " FontAttributes="Bold" MinimumWidthRequest="80"/>
                                             <Label VerticalOptions="CenterAndExpand" Text="{Binding Title}"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
@@ -47,7 +47,6 @@
                                             <Label VerticalOptions="CenterAndExpand" Text="{Binding Size}"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Some Text: " FontAttributes="Bold"/>
                                             <Label VerticalOptions="CenterAndExpand" Text="{Binding Snippet}"/>
                                         </StackLayout>
                                     </StackLayout>

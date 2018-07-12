@@ -64,7 +64,7 @@ namespace OfflineWikipedia.Helpers
             if (indexOfSub > 0)
             {
                 indexOfSub = input.IndexOf(cutString, indexOfSub + cutString.Length);
-                Debug.WriteLine("Index of: " + indexOfSub);
+                //Debug.WriteLine("Index of: " + indexOfSub);
                 if (indexOfSub > 0) {
                     return input.Substring(0, indexOfSub);
                 }

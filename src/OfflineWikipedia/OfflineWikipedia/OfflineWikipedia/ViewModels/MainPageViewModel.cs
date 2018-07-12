@@ -150,16 +150,38 @@ namespace OfflineWikipedia.ViewModels
                     IsSearching = true;
 
                     ReturnedText = "Fetching the names of all articles from Wikipedia.";
+                    DateTime startTime = DateTime.Now;
                     List<string> names = await APIServices.GetAllNamesFromSearch(EntryText, SearchResult.Totalhits);
 
-                    Debug.WriteLine("Number of Article names: " + names.Count);
-
+                    Debug.WriteLine("Time to get Names (Seconds): " + (DateTime.Now - startTime).TotalMilliseconds);
+                    
                     for (int i = 0; i < names.Count; i++)
                     {
-                        ReturnedText = "Downloading " + i + " out of " + names.Count + " Articles...";
-                        BarProgress = i / names.Count;
+                        int itemsLeft = names.Count - i;
+                        double estTime = itemsLeft*Settings.AverageDownloadAndProcessingTimePerFile;
+                        string estAddOn = GetTimeAddOnForEstimate(estTime);
+                        ReturnedText = "Downloading " + i + " out of " + names.Count + " Articles...\nEstimated time: "+estAddOn;
+                        //BarProgress = i / names.Count;
+
+                        DateTime timeStartDownload = DateTime.Now;
                         await StorageService.SaveHTMLFileToStorage(names[i]);
+                        DateTime timeStartClean = DateTime.Now;
                         await HTMLHandler.CleanHTMLFile(names[i]);
+
+                        double timeSpentDownloading = (timeStartClean- timeStartDownload).TotalMilliseconds;
+                        double timeSpentClean = (DateTime.Now - timeStartClean).TotalMilliseconds;
+                        Debug.WriteLine("Time to Download: " + timeSpentDownloading);
+                        Debug.WriteLine("Time to Process: " + timeSpentClean);
+
+                        double totalTime = timeSpentClean + timeSpentDownloading;
+                        if (Settings.AverageDownloadAndProcessingTimePerFile == 1)
+                        {
+                            Settings.AverageDownloadAndProcessingTimePerFile = totalTime;
+                        }
+                        else
+                        {
+                            Settings.AverageDownloadAndProcessingTimePerFile = (Settings.AverageDownloadAndProcessingTimePerFile + (DateTime.Now - timeStartDownload).TotalMilliseconds)/2;
+                        }
                     }
 
                     IsSearching = false;
@@ -179,6 +201,34 @@ namespace OfflineWikipedia.ViewModels
         {
             await _dialogService.DisplayAlertAsync(title, text, buttonText);
             //await CrossNotifications.Current.Send(new Notification() { Title=title, Message=text });
+        }
+
+        private string GetTimeAddOnForEstimate(double milliseconds)
+        {
+            string addOn = String.Format("{0:f2} Milliseconds",milliseconds);
+            double seconds = milliseconds / 1000;
+            double minutes = seconds / 60;
+            double hours = minutes / 60;
+            double days = hours / 24;
+
+            if (seconds > 1)
+            {
+                addOn= String.Format("{0:f2} Seconds",seconds);
+            }
+            if (minutes > 1)
+            {
+                addOn= String.Format("{0:f2} Minutes", minutes); 
+            }
+            if (hours > 1)
+            {
+                addOn = String.Format("{0:f2} Hours", hours);
+            }
+            if (days > 1)
+            {
+                addOn = String.Format("{0:f2} Days", days);
+            }
+
+            return addOn;
         }
         #endregion
     }
