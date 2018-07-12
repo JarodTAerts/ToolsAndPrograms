@@ -31,21 +31,33 @@
     <AppXManifest Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-10T20:14:07.170</Modified>
+      <Modified>2018-07-12T00:57:57.638</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\OfflineWikipedia.UWP.exe">
       <PackagePath>entrypoint\OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-10T20:14:05.727</Modified>
+      <Modified>2018-07-12T00:57:56.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\dryioc.dll\2.12.6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\DryIoc.dll">
       <PackagePath>DryIoc.dll</PackagePath>
       <Modified>2017-12-21T16:10:02.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\microsoft.toolkit.uwp.notifications\1.4.1\lib\uap10.0\Microsoft.Toolkit.Uwp.Notifications.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.Notifications.dll</PackagePath>
+      <Modified>2017-04-04T21:54:38.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2018-03-24T22:44:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\plugin.notifications\4.0.0\lib\uap10\Plugin.Notifications.Abstractions.dll">
+      <PackagePath>Plugin.Notifications.Abstractions.dll</PackagePath>
+      <Modified>2017-07-04T01:18:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\plugin.notifications\4.0.0\lib\uap10\Plugin.Notifications.dll">
+      <PackagePath>Plugin.Notifications.dll</PackagePath>
+      <Modified>2017-07-04T01:18:56.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\prism.core\7.0.0.396\lib\uap10.0\Prism.dll">
       <PackagePath>Prism.dll</PackagePath>
@@ -58,6 +70,10 @@
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\prism.forms\7.0.0.396\lib\netstandard2.0\Prism.Forms.dll">
       <PackagePath>Prism.Forms.dll</PackagePath>
       <Modified>2018-01-23T04:02:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\querystring.net\1.0.0\lib\dotnet\QueryString.NETCore.dll">
+      <PackagePath>QueryString.NETCore.dll</PackagePath>
+      <Modified>2015-09-11T18:10:08.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.6\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -745,7 +761,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia\bin\Debug\netstandard2.0\OfflineWikipedia.dll">
       <PackagePath>OfflineWikipedia.dll</PackagePath>
-      <Modified>2018-07-10T20:13:53.968</Modified>
+      <Modified>2018-07-12T00:57:49.713</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -791,11 +807,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-07-10T20:14:05.370</Modified>
+      <Modified>2018-07-12T00:57:55.668</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-07-10T20:14:05.372</Modified>
+      <Modified>2018-07-12T00:57:55.669</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -808,11 +824,11 @@
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-09T18:12:14.534</Modified>
+      <Modified>2018-07-12T00:10:42.970</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Core\OfflineWikipedia.UWP.exe">
       <PackagePath>OfflineWikipedia.UWP.exe</PackagePath>
-      <Modified>2018-07-10T20:14:07.161</Modified>
+      <Modified>2018-07-12T00:57:57.625</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

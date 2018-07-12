@@ -144,24 +144,32 @@ namespace OfflineWikipedia.ViewModels
         {
             if (SearchResult.Items != null)
             {
-                IsSearching = true;
-
-                ReturnedText = "Fetching the names of all articles from Wikipedia.";
-                List<string> names=await APIServices.GetAllNamesFromSearch(EntryText,SearchResult.Totalhits);
-
-                Debug.WriteLine("Number of Article names: "+names.Count);
-                
-                for(int i = 0; i < names.Count; i++)
+                Debug.WriteLine("Number of items; " + SearchResult.Totalhits);
+                if (SearchResult.Totalhits < 10000)
                 {
-                    ReturnedText = "Downloading " + i + " out of "+names.Count+" Articles...";
-                    BarProgress = i / names.Count;
-                    await StorageService.SaveHTMLFileToStorage(names[i]);
-                    await HTMLHandler.CleanHTMLFile(names[i]);
-                }
+                    IsSearching = true;
 
-                IsSearching = false;
-                ReturnedText = "Downloaded "+names.Count+" Articles.";
-                await SendAlertOrNotification("Articles Added", names.Count+" articles have been downloaded and added to your library.", "Ok");              
+                    ReturnedText = "Fetching the names of all articles from Wikipedia.";
+                    List<string> names = await APIServices.GetAllNamesFromSearch(EntryText, SearchResult.Totalhits);
+
+                    Debug.WriteLine("Number of Article names: " + names.Count);
+
+                    for (int i = 0; i < names.Count; i++)
+                    {
+                        ReturnedText = "Downloading " + i + " out of " + names.Count + " Articles...";
+                        BarProgress = i / names.Count;
+                        await StorageService.SaveHTMLFileToStorage(names[i]);
+                        await HTMLHandler.CleanHTMLFile(names[i]);
+                    }
+
+                    IsSearching = false;
+                    ReturnedText = "Downloaded " + names.Count + " Articles.";
+                    await SendAlertOrNotification("Articles Added", names.Count + " articles have been downloaded and added to your library.", "Ok");
+                }
+                else
+                {
+                    await SendAlertOrNotification("To Many Articles","Due to limitations with the Wikipedia API you cannot download more than 10,000 articles at once. Try adding another word to your search to narrow it. I am working on it.","Ok");
+                }
             }
         }
         #endregion

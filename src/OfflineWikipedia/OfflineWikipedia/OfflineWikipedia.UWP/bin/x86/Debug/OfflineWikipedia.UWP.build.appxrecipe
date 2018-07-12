@@ -31,8 +31,17 @@
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\dryioc.dll\2.12.6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\DryIoc.dll">
       <PackagePath>DryIoc.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\microsoft.toolkit.uwp.notifications\1.4.1\lib\uap10.0\Microsoft.Toolkit.Uwp.Notifications.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.Notifications.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\plugin.notifications\4.0.0\lib\uap10\Plugin.Notifications.Abstractions.dll">
+      <PackagePath>Plugin.Notifications.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\plugin.notifications\4.0.0\lib\uap10\Plugin.Notifications.dll">
+      <PackagePath>Plugin.Notifications.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\prism.core\7.0.0.396\lib\uap10.0\Prism.dll">
       <PackagePath>Prism.dll</PackagePath>
@@ -42,6 +51,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\prism.forms\7.0.0.396\lib\netstandard2.0\Prism.Forms.dll">
       <PackagePath>Prism.Forms.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\querystring.net\1.0.0\lib\dotnet\QueryString.NETCore.dll">
+      <PackagePath>QueryString.NETCore.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jaert\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.6\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>

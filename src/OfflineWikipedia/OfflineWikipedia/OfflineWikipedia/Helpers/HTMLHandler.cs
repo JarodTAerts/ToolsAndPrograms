@@ -33,14 +33,17 @@ namespace OfflineWikipedia.Helpers
             input = CutOutAfterString(input, "<!-- \nNewPP limit report");
             input = CutOutAfterString(input, "Notes[edit]");
             input = Regex.Replace(input, "\nv\nt\ne\n",String.Empty);
+            input = Regex.Replace(input, "See also:.*?\n", String.Empty);
+            input = CutOutAfterString(input, "See also[edit]");
+            input = CutOutAfterString(input, "References:");
             input = Regex.Replace(input, "\\[edit\\]", ":\n");
-            input = CutOutAfterString(input, "See also:");
             input = Regex.Replace(input, "\n{3,}", "\n\n");
             return input.Trim();
         }
 
         public static string ReplaceColons(string input)
         {
+            input = Regex.Replace(input, "/", "-");
             return Regex.Replace(input, ":", "-");
         }
 

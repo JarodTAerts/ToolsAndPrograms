@@ -308,3 +308,12 @@ C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\b
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Settings.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Settings.pdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\obj\x86\Debug\Plugin.Settings.pri.xml
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Microsoft.Toolkit.Uwp.Notifications.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Microsoft.Toolkit.Uwp.Notifications.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Notifications.Abstractions.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Notifications.Abstractions.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Notifications.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\Plugin.Notifications.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\QueryString.NETCore.dll
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\bin\x86\Debug\QueryString.NETCore.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.UWP\obj\x86\Debug\Plugin.Notifications.pri.xml

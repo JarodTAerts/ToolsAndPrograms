@@ -46,6 +46,13 @@ namespace OfflineWikipedia.ViewModels
             set => SetProperty(ref _returnedText, value);
         }
 
+        private string _numbersText;
+        public string NumbersText
+        {
+            get => _numbersText;
+            set => SetProperty(ref _numbersText, value);
+        }
+
         private string _entryText;
         public string EntryText
         {
@@ -80,6 +87,7 @@ namespace OfflineWikipedia.ViewModels
             SavedArticles = new List<string>();
             ResultsReturned = false;
             ReturnedText = "Search your local library to read articles.";
+            EntryText = "";
             IsSearching = false;
         }
         #endregion
@@ -108,6 +116,7 @@ namespace OfflineWikipedia.ViewModels
             Debug.WriteLine("Searched something");
             //Filter the articles based on the search that you entered
             SavedArticles = AllSavedArticles.Where(a => a.ToUpper().Contains(EntryText.ToUpper())).ToList();
+            NumbersText = "Number of Articles: " + SavedArticles.Count;
         }
         #endregion
 
@@ -116,13 +125,17 @@ namespace OfflineWikipedia.ViewModels
         {
             //When navigated to make sure no item is selected and set is searching so the activity monitor shows up
             SelectedItem = null;
-            IsSearching = true;
-            //Get all the names of the articles and put them into the all articles list
-            //Then set Saved articles to all articles so they are all displayed to start
-            AllSavedArticles = await StorageService.GetNamesOfSavedArticles();
-            SavedArticles = AllSavedArticles;
-            //Once that is all done then make the activity monitor go away
-            IsSearching = false;
+            if (SavedArticles == null || SavedArticles.Count == 0)
+            {
+                IsSearching = true;
+                //Get all the names of the articles and put them into the all articles list
+                //Then set Saved articles to all articles so they are all displayed to start
+                AllSavedArticles = await StorageService.GetNamesOfSavedArticles();
+                SavedArticles = AllSavedArticles;
+                NumbersText = "Number of Articles: " + SavedArticles.Count;
+                //Once that is all done then make the activity monitor go away
+                IsSearching = false;
+            }
             if (SavedArticles != null && SavedArticles.Count > 0)
             {
                 //If there were names of articles returned then set results returned to show the list
