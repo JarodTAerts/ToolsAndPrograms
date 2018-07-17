@@ -4299,7 +4299,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaert\\.nuget\\packages\\": {}
+    "C:\\Users\\JarodAerts\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4307,12 +4307,12 @@
       "projectUniqueName": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.Android\\OfflineWikipedia.Android.csproj",
       "projectName": "OfflineWikipedia.Android",
       "projectPath": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.Android\\OfflineWikipedia.Android.csproj",
-      "packagesPath": "C:\\Users\\jaert\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\JarodAerts\\.nuget\\packages\\",
       "outputPath": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\jaert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JarodAerts\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
