@@ -121,18 +121,17 @@ namespace OfflineWikipedia.ViewModels
         }
 
         /// <summary>
-        /// Function to handle when an item is selected from the list
+        /// Function to handle when an item is selected from the list. If one item is selected then it will be downloaded to the libary
+        /// This should probably be changed to displaying the article and offering a download button. But who knows?
         /// </summary>
         private async void OnSelectedItemChanged()
         {
             //If the item you selected is not null then use the storage service to save that article to storage
             if (SelectedItem != null)
             {
-                Debug.WriteLine("Starting Write to file...");
                 IsSearching = true;
                 await StorageService.SaveHTMLFileToStorage(SelectedItem.Title);
                 IsSearching = false;
-                Debug.WriteLine("Finished Write to file...");
                 await _dialogService.DisplayAlertAsync("Article Added","Article \""+SelectedItem.Title+"\" has been downloaded and added to your library.","Ok");               
             }
         }
@@ -144,52 +143,29 @@ namespace OfflineWikipedia.ViewModels
         {
             if (SearchResult.Items != null)
             {
-                Debug.WriteLine("Number of items; " + SearchResult.Totalhits);
+                //Because of limit in Wikipedia's API no more than 10,000 articles can be downloaded from one search query
                 if (SearchResult.Totalhits < 10000)
                 {
+                    //Start activity indicator and Let them know what is happening
                     IsSearching = true;
-
                     ReturnedText = "Fetching the names of all articles from Wikipedia.";
+
+                    //Set the start time and get all the names of the articles to be downloaded, then log
                     DateTime startTime = DateTime.Now;
                     List<string> names = await APIServices.GetAllNamesFromSearch(EntryText, SearchResult.Totalhits);
+                    Debug.WriteLine("Time to get Names (Seconds): " + GetMilliSecondsSinceStart(startTime));
 
-                    Debug.WriteLine("Time to get Names (Seconds): " + (DateTime.Now - startTime).TotalMilliseconds);
-                    
-                    for (int i = 0; i < names.Count; i++)
-                    {
-                        int itemsLeft = names.Count - i;
-                        double estTime = itemsLeft*Settings.AverageDownloadAndProcessingTimePerFile;
-                        string estAddOn = GetTimeAddOnForEstimate(estTime);
-                        ReturnedText = "Downloading " + i + " out of " + names.Count + " Articles...\nEstimated time: "+estAddOn;
-                        //BarProgress = i / names.Count;
+                    //Actually download all the articles
+                    await DownloadAllArticlesFromList(names);
 
-                        DateTime timeStartDownload = DateTime.Now;
-                        await StorageService.SaveHTMLFileToStorage(names[i]);
-                        DateTime timeStartClean = DateTime.Now;
-                        await HTMLHandler.CleanHTMLFile(names[i]);
-
-                        double timeSpentDownloading = (timeStartClean- timeStartDownload).TotalMilliseconds;
-                        double timeSpentClean = (DateTime.Now - timeStartClean).TotalMilliseconds;
-                        Debug.WriteLine("Time to Download: " + timeSpentDownloading);
-                        Debug.WriteLine("Time to Process: " + timeSpentClean);
-
-                        double totalTime = timeSpentClean + timeSpentDownloading;
-                        if (Settings.AverageDownloadAndProcessingTimePerFile == 1)
-                        {
-                            Settings.AverageDownloadAndProcessingTimePerFile = totalTime;
-                        }
-                        else
-                        {
-                            Settings.AverageDownloadAndProcessingTimePerFile = (Settings.AverageDownloadAndProcessingTimePerFile + (DateTime.Now - timeStartDownload).TotalMilliseconds)/2;
-                        }
-                    }
-
+                    //Stop the activity indicator, set the returned text with some info and send an alert
                     IsSearching = false;
-                    ReturnedText = "Downloaded " + names.Count + " Articles.";
+                    ReturnedText = "Downloaded " + names.Count + " Articles. In " + GetTimeAddOnForEstimate(GetMilliSecondsSinceStart(startTime))+".";
                     await SendAlertOrNotification("Articles Added", names.Count + " articles have been downloaded and added to your library.", "Ok");
                 }
                 else
                 {
+                    //If there search has more than 10,000 articles, warn them they need to make their search more specific and dont let them proceed
                     await SendAlertOrNotification("To Many Articles","Due to limitations with the Wikipedia API you cannot download more than 10,000 articles at once. Try adding another word to your search to narrow it. I am working on it.","Ok");
                 }
             }
@@ -197,20 +173,35 @@ namespace OfflineWikipedia.ViewModels
         #endregion
 
         #region Helper Functions
+        /// <summary>
+        /// Function that will send a notification if the app is in the background and an alert if in the foregorund
+        /// </summary>
+        /// <param name="title">Title of the alert or notification</param>
+        /// <param name="text">Main text of the alert or notification</param>
+        /// <param name="buttonText">Text for the dismiss button</param>
+        /// <returns></returns>
          private async Task SendAlertOrNotification(string title, string text, string buttonText)
         {
-            await _dialogService.DisplayAlertAsync(title, text, buttonText);
+            _dialogService.DisplayAlertAsync(title, text, buttonText);
+            //TODO: Get the notifications working
             //await CrossNotifications.Current.Send(new Notification() { Title=title, Message=text });
         }
 
+        /// <summary>
+        /// Function to get the text to be displayed at the end of the estimated time text on the download screen
+        /// </summary>
+        /// <param name="milliseconds">Estimated time in milliseconds</param>
+        /// <returns></returns>
         private string GetTimeAddOnForEstimate(double milliseconds)
         {
+            //Set the initial string and get the amount of time in seconds, minutes, hours, and days
             string addOn = String.Format("{0:f2} Milliseconds",milliseconds);
             double seconds = milliseconds / 1000;
             double minutes = seconds / 60;
             double hours = minutes / 60;
             double days = hours / 24;
 
+            //Set the string to be the one that will appear the best based on the numbering
             if (seconds > 1)
             {
                 addOn= String.Format("{0:f2} Seconds",seconds);
@@ -229,6 +220,73 @@ namespace OfflineWikipedia.ViewModels
             }
 
             return addOn;
+        }
+
+        /// <summary>
+        /// Function that gets the amount of time between the start time and now in milliseconds
+        /// </summary>
+        /// <param name="start">DateTime of the start time</param>
+        /// <returns></returns>
+        private double GetMilliSecondsSinceStart(DateTime start)
+        {
+            return (DateTime.Now - start).TotalMilliseconds;
+        }
+
+        /// <summary>
+        /// Function that actually downloads the articles in a list to local storage
+        /// </summary>
+        /// <param name="names">String list containing the names of all the articles to be downloaded</param>
+        /// <returns></returns>
+        private async Task DownloadAllArticlesFromList(List<string> names)
+        {
+            for (int i = 0; i < names.Count; i++)
+            {
+                //Estimate the amount of time remaining and show that information and the progress to the user
+                int itemsLeft = names.Count - i;
+                double estTime = itemsLeft * Settings.AverageDownloadAndProcessingTimePerFile;
+                string estAddOn = GetTimeAddOnForEstimate(estTime);
+                ReturnedText = "Downloading " + i + " out of " + names.Count + " Articles...\nEstimated time: " + estAddOn;
+
+                //Set the start time for downloading and download the article with name names[i]
+                DateTime timeStartDownload = DateTime.Now;
+                await StorageService.SaveHTMLFileToStorage(names[i]);
+
+                //Set the start time and process the HTML text from article
+                DateTime timeStartClean = DateTime.Now;
+                await HTMLHandler.CleanHTMLFile(names[i]);
+
+                //Get the time spent for each of the processes, and to total. And then log it
+                double timeSpentDownloading = (timeStartClean - timeStartDownload).TotalMilliseconds;
+                double timeSpentClean = (DateTime.Now - timeStartClean).TotalMilliseconds;
+                double totalTime = timeSpentClean + timeSpentDownloading;
+                Debug.WriteLine("Time to Download: " + timeSpentDownloading);
+                Debug.WriteLine("Time to Process: " + timeSpentClean);
+                //TODO: Some better type of logging than just writing to console. Maybe to other file or something easier to read?
+
+                //Update the averages for more accurate predictions in the future
+                SetDownloadAndProcessingAverages(totalTime);
+            }
+        }
+
+        /// <summary>
+        /// Function to update or set the average time it takes to download and process a file
+        /// </summary>
+        /// <param name="totalTime">Time in milliseconds it took to download and process the last file</param>
+        private void SetDownloadAndProcessingAverages(double totalTime)
+        {
+            //If there have been no entries into this yet, set the average equal to the time spent and the number of entries to 1
+            if (Settings.AverageDownloadAndProcessingTimePerFile == 1)
+            {
+                Settings.AverageDownloadAndProcessingTimePerFile = totalTime;
+                Settings.NumberOfEntriesInAverageDownloadTime = 1;
+            }
+            else
+            {
+                //otherwise increase the number of entries in the average and get a new average. Maybe this should be the other way. But it works the same
+                Settings.NumberOfEntriesInAverageDownloadTime++;
+                Settings.AverageDownloadAndProcessingTimePerFile = (Settings.AverageDownloadAndProcessingTimePerFile * (Settings.NumberOfEntriesInAverageDownloadTime-1)
+                    + totalTime) / Settings.NumberOfEntriesInAverageDownloadTime;
+            }
         }
         #endregion
     }

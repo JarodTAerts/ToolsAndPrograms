@@ -107,6 +107,11 @@ C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Andro
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\System.Web.Services.pdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\System.Xml.Linq.pdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\android\assets\System.Xml.pdb
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\res\mipmap-hdpi\yowiki_logo.png
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\res\mipmap-mdpi\yowiki_logo.png
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\res\mipmap-xhdpi\yowiki_logo.png
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\res\mipmap-xxhdpi\yowiki_logo.png
+C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\res\mipmap-xxxhdpi\yowiki_logo.png
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\bin\Debug\OfflineWikipedia.Android.dll
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\OfflineWikipedia.pdb
 C:\ToolsAndPrograms\src\OfflineWikipedia\OfflineWikipedia\OfflineWikipedia.Android\obj\Debug\linksrc\OfflineWikipedia.Android.dll.mdb

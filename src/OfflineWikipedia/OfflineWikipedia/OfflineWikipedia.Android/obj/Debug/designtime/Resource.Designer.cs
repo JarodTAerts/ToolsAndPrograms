@@ -3631,6 +3631,12 @@ namespace OfflineWikipedia.Droid
 			// aapt resource value: 0x7F030002
 			public const int ic_launcher = 2130903042;
 			
+			// aapt resource value: 0x7F030004
+			public const int YoWiki Logo = 2130903044;
+			
+			// aapt resource value: 0x7F030003
+			public const int YoWiki_Logo = 2130903043;
+			
 			static Mipmap()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

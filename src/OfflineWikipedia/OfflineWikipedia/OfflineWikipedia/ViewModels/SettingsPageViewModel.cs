@@ -44,6 +44,7 @@ namespace OfflineWikipedia.ViewModels
         #region Delegate Commands
         public DelegateCommand BackButtonCommand { get; set; }
         public DelegateCommand ClearArticlesCommand { get; set; }
+        public DelegateCommand AboutYoWikiCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -55,6 +56,7 @@ namespace OfflineWikipedia.ViewModels
             DownloadImages = Settings.DownloadImages;
             BackButtonCommand = new DelegateCommand(OnBackButton);
             ClearArticlesCommand = new DelegateCommand(OnClearArticles);
+            AboutYoWikiCommand = new DelegateCommand(OnAboutYoWiki);
             _dialogService = dialog;
         }
         #endregion
@@ -66,6 +68,11 @@ namespace OfflineWikipedia.ViewModels
         private async void OnBackButton()
         {
             await NavigationService.GoBackAsync();
+        }
+
+        private async void OnAboutYoWiki()
+        {
+            await NavigationService.NavigateAsync("AboutAppPage");
         }
 
         /// <summary>
@@ -96,9 +103,12 @@ namespace OfflineWikipedia.ViewModels
             Settings.DownloadOverCell = (DownloadOverCeullular);
         }
 
-
+        /// <summary>
+        /// Function to handle when you press the clear all saved articles button
+        /// </summary>
         private async void OnClearArticles()
         {
+            //TODO: Make a dialog that makes sure they user wants to clear all the articles before we clear them
             await StorageService.ClearSavedArticles();
             await _dialogService.DisplayAlertAsync("Articles Cleared", "All articles from your local library.", "Ok");
         }

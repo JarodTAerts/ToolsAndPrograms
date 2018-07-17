@@ -3,4 +3,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
+  <PropertyGroup>
+    <SmallTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</SmallTileSource>
+    <MediumTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</MediumTileSource>
+    <WideTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki_Banner.png</WideTileSource>
+    <LargeTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</LargeTileSource>
+    <AppIconSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</AppIconSource>
+    <SplashScreenSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</SplashScreenSource>
+    <BadgeLogoSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</BadgeLogoSource>
+    <PackageLogoSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</PackageLogoSource>
+  </PropertyGroup>
 </Project>

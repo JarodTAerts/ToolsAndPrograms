@@ -31,6 +31,9 @@ namespace OfflineWikipedia
             await NavigationService.NavigateAsync("NavigationPage/StartPage");
         }
         
+        /// <summary>
+        /// Function to check to see if it is the first time you opened the app. If it is, maybe do something. After doing that set it to not the first time.
+        /// </summary>
         protected void InitializeSettings()
         {
             if (Settings.FirstTimeOpened)
@@ -52,6 +55,7 @@ namespace OfflineWikipedia
             containerRegistry.RegisterForNavigation<SettingsPage>();
             containerRegistry.RegisterForNavigation<BrowseLibraryPage>();
             containerRegistry.RegisterForNavigation<ViewArticlePage>();
+            containerRegistry.RegisterForNavigation<AboutAppPage>();
         }
     }
 }

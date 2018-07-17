@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
@@ -49,6 +50,14 @@ namespace LearningAPIs
             return result;
         }
 
+        /// <summary>
+        /// Function that is used to get all the article titles from the Wikipedia search so that they can be downloaded
+        /// This function is very inefficent right now and can only get 10,000 articles. This limit seems to be part of the Wikipedia API and needs to be investigated
+        /// There could also be lots of general improvements
+        /// </summary>
+        /// <param name="search">Text entered in the search box</param>
+        /// <param name="totalHits">Number of hits that were returned from that search</param>
+        /// <returns></returns>
         public static async Task<List<string>> GetAllNamesFromSearch(string search, int totalHits)
         {
             List<string> names = new List<string>();
@@ -85,7 +94,8 @@ namespace LearningAPIs
         {
             //Create the client encode the title and get the html response then return it
             var client = new HttpClient();
-            //Debug.WriteLine("Title: " + title);
+            Debug.WriteLine("Title: " + title);
+            title = Regex.Replace(title,"\\?", "%3F");
             string htmlStr = (string)await client.GetStringAsync(basePageUrl + title);
 
             return htmlStr;

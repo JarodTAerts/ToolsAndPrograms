@@ -9,7 +9,7 @@
              NavigationPage.HasBackButton="True">
 
     <ContentView>
-        <StackLayout BackgroundColor="WhiteSmoke" Padding="15">
+        <StackLayout BackgroundColor="WhiteSmoke" Padding="15" Spacing="10">
             
             <StackLayout Orientation="Horizontal">
                 <Label Text="Download over Cellular: " VerticalOptions="CenterAndExpand"/>
@@ -36,7 +36,7 @@
 
             <Button Text="Clear Saved Articles" HorizontalOptions="CenterAndExpand" Command="{Binding ClearArticlesCommand}"/>
 
-            <Button Text="Back" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Command="{Binding BackButtonCommand}"/>
+            <Button Text="About YoWiki" HorizontalOptions="CenterAndExpand" Command="{Binding AboutYoWikiCommand}"/>
         </StackLayout> 
     </ContentView>
   

@@ -52,6 +52,12 @@ namespace OfflineWikipedia.Services
             return File.ReadAllText(fileName);
         }
 
+        /// <summary>
+        /// Function to take a load of text and write it to a file
+        /// </summary>
+        /// <param name="title">Title of the article, will be the name of the file</param>
+        /// <param name="text">Text to be in the file</param>
+        /// <returns></returns>
         public async static Task WriteTextToFile(string title, string text)
         {
             title = HTMLHandler.ReplaceColons(title);
@@ -78,6 +84,10 @@ namespace OfflineWikipedia.Services
             return results;
         }
 
+        /// <summary>
+        /// Function to delete all of the files that have been downloaded and saved to local storage
+        /// </summary>
+        /// <returns></returns>
         public async static Task ClearSavedArticles()
         {
             List<string> files = await GetNamesOfSavedArticles();
