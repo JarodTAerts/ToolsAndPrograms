@@ -8263,7 +8263,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaert\\.nuget\\packages\\": {},
+    "C:\\Users\\JarodAerts\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
@@ -8272,7 +8272,7 @@
       "projectUniqueName": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.UWP\\OfflineWikipedia.UWP.csproj",
       "projectName": "OfflineWikipedia.UWP",
       "projectPath": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.UWP\\OfflineWikipedia.UWP.csproj",
-      "packagesPath": "C:\\Users\\jaert\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\JarodAerts\\.nuget\\packages\\",
       "outputPath": "C:\\ToolsAndPrograms\\src\\OfflineWikipedia\\OfflineWikipedia\\OfflineWikipedia.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -8280,7 +8280,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\jaert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JarodAerts\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

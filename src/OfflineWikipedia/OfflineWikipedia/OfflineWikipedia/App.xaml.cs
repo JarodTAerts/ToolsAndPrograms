@@ -22,12 +22,14 @@ namespace OfflineWikipedia
          */
         public App() : this(null) { }
 
+        public static bool IsInBackgrounded { get; private set; }
+
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
+            IsInBackgrounded = false;
             await NavigationService.NavigateAsync("NavigationPage/StartPage");
         }
         
@@ -52,6 +54,18 @@ namespace OfflineWikipedia
             containerRegistry.RegisterForNavigation<SettingsPage>();
             containerRegistry.RegisterForNavigation<BrowseLibraryPage>();
             containerRegistry.RegisterForNavigation<ViewArticlePage>();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            IsInBackgrounded = false;
+        }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+            IsInBackgrounded = true;
         }
     }
 }
