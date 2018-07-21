@@ -6,11 +6,12 @@
   <PropertyGroup>
     <SmallTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</SmallTileSource>
     <MediumTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</MediumTileSource>
-    <WideTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki_Banner.png</WideTileSource>
+    <WideTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</WideTileSource>
     <LargeTileSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</LargeTileSource>
     <AppIconSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</AppIconSource>
-    <SplashScreenSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</SplashScreenSource>
+    <SplashScreenSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki_Banner-2480.png</SplashScreenSource>
     <BadgeLogoSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</BadgeLogoSource>
     <PackageLogoSource>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</PackageLogoSource>
+    <Source>C:\Users\jaert\Dropbox\Podcasts\YoTalk\Logo_and_Background\YoWiki Logo.png</Source>
   </PropertyGroup>
 </Project>

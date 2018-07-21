@@ -2,12 +2,6 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "Acr.Notifications/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Plugin.Notifications": "4.0.0"
-        }
-      },
       "DryIoc.dll/2.12.6": {
         "type": "package",
         "dependencies": {
@@ -69,20 +63,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Plugin.Notifications/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
-          "lib/netstandard1.0/Plugin.Notifications.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
-          "lib/netstandard1.0/Plugin.Notifications.dll": {}
         }
       },
       "Prism.Core/7.0.0.396": {
@@ -400,6 +380,17 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Xam.Plugins.Notifier/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.LocalNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.LocalNotifications.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -414,38 +405,26 @@
           "lib/netstandard1.0/Plugin.Settings.dll": {}
         }
       },
-      "Xamarin.Forms/2.5.0.122203": {
+      "Xamarin.Forms/3.1.0.637273": {
         "type": "package",
         "compile": {
-          "lib/netstandard1.0/Xamarin.Forms.Core.dll": {},
-          "lib/netstandard1.0/Xamarin.Forms.Platform.dll": {},
-          "lib/netstandard1.0/Xamarin.Forms.Xaml.dll": {}
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/Xamarin.Forms.Core.dll": {},
-          "lib/netstandard1.0/Xamarin.Forms.Platform.dll": {},
-          "lib/netstandard1.0/Xamarin.Forms.Xaml.dll": {}
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard1.0/Xamarin.Forms.props": {},
-          "build/netstandard1.0/Xamarin.Forms.targets": {}
+          "build/netstandard2.0/Xamarin.Forms.props": {},
+          "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       }
     }
   },
   "libraries": {
-    "Acr.Notifications/4.0.0": {
-      "sha512": "J7RaTR4gaANli+sG5ZPIfT314lxodD/6zyzWthxereHrVw61ALDIVKTZBdrXbbYaDOSSJMmX+fWzTggAwEvd0w==",
-      "type": "package",
-      "path": "acr.notifications/4.0.0",
-      "files": [
-        "acr.notifications.4.0.0.nupkg.sha512",
-        "acr.notifications.nuspec",
-        "nuget.exe",
-        "pack.cmd",
-        "push.cmd"
-      ]
-    },
     "DryIoc.dll/2.12.6": {
       "sha512": "jmqwiN8591mEgDp7FU/HrOEzrHsrL0STNZQRMVh5BgvyNiaSu0hoxVXcZC9BwbEugCcOLdO6mUrcJPY3q/dYEQ==",
       "type": "package",
@@ -650,37 +629,6 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
-      ]
-    },
-    "Plugin.Notifications/4.0.0": {
-      "sha512": "GJEFQNeRE/9b8nFgayloH3wYoXTPqmZA07Tv8IGb3n1so+u1bYCDwek8m+UiOlvwa91hFpIay7c2CCUnA4mElw==",
-      "type": "package",
-      "path": "plugin.notifications/4.0.0",
-      "files": [
-        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.dll",
-        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.pdb",
-        "lib/MonoAndroid10/Plugin.Notifications.dll",
-        "lib/MonoAndroid10/Plugin.Notifications.dll.mdb",
-        "lib/MonoAndroid10/Plugin.Notifications.pdb",
-        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.dll",
-        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.pdb",
-        "lib/Xamarin.Mac20/Plugin.Notifications.dll",
-        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.dll",
-        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.pdb",
-        "lib/Xamarin.iOS10/Plugin.Notifications.dll",
-        "lib/Xamarin.iOS10/Plugin.Notifications.pdb",
-        "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll",
-        "lib/netstandard1.0/Plugin.Notifications.Abstractions.pdb",
-        "lib/netstandard1.0/Plugin.Notifications.deps.json",
-        "lib/netstandard1.0/Plugin.Notifications.dll",
-        "lib/netstandard1.0/Plugin.Notifications.pdb",
-        "lib/uap10/Plugin.Notifications.Abstractions.dll",
-        "lib/uap10/Plugin.Notifications.Abstractions.pdb",
-        "lib/uap10/Plugin.Notifications.dll",
-        "lib/uap10/Plugin.Notifications.pdb",
-        "lib/uap10/Plugin.Notifications.pri",
-        "plugin.notifications.4.0.0.nupkg.sha512",
-        "plugin.notifications.nuspec"
       ]
     },
     "Prism.Core/7.0.0.396": {
@@ -2065,6 +2013,39 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Xam.Plugins.Notifier/3.0.0": {
+      "sha512": "PznoXrrfuUf+4SVaum+fl/ABggAi+zGTnPlTqpCvypJ70OL/O3cW9G73CT7RjcknbX5oLK29hKCtoy+2yQxIsQ==",
+      "type": "package",
+      "path": "xam.plugins.notifier/3.0.0",
+      "files": [
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.XML",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.dll",
+        "lib/MonoAndroid10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/UAP10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/UAP10/Plugin.LocalNotifications.XML",
+        "lib/UAP10/Plugin.LocalNotifications.dll",
+        "lib/UAP10/Plugin.LocalNotifications.pdb",
+        "lib/UAP10/Plugin.LocalNotifications.pri",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.dll",
+        "lib/Xamarin.Mac20/Plugin.LocalNotifications.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.XML",
+        "lib/Xamarin.iOS10/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.LocalNotifications.deps.json",
+        "lib/netstandard1.0/Plugin.LocalNotifications.dll",
+        "lib/netstandard1.0/Plugin.LocalNotifications.xml",
+        "xam.plugins.notifier.3.0.0.nupkg.sha512",
+        "xam.plugins.notifier.nuspec"
+      ]
+    },
     "Xam.Plugins.Settings/3.1.1": {
       "sha512": "EQEYQJ64ZLqui5GWkLMavgqitHxwUHZHryTzUD1021UBuz1XwDSjPL45W0K4pPXjz9oKbg7YpRXKPR1luPr/5Q==",
       "type": "package",
@@ -2133,15 +2114,17 @@
         "xam.plugins.settings.nuspec"
       ]
     },
-    "Xamarin.Forms/2.5.0.122203": {
-      "sha512": "qg7A2IXbVV/5u9qqeiDhRMwpVEsbWKBxzeAtD0rTuntmaDB1Z7WuBg5IK2VBklJbKe2Ps8V9zBfEwgJIqPVJUw==",
+    "Xamarin.Forms/3.1.0.637273": {
+      "sha512": "iYIMlhf5BFutJiVYYfawEtMzq4vo9m5qdT7R/IeDD40ENsqxqMBmvwp1/VzfD0las3ptkE0vgUG57O7QcUJlow==",
       "type": "package",
-      "path": "xamarin.forms/2.5.0.122203",
+      "path": "xamarin.forms/3.1.0.637273",
       "files": [
+        ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
         "build/netstandard1.0/Mono.Cecil.Rocks.dll",
         "build/netstandard1.0/Mono.Cecil.dll",
+        "build/netstandard1.0/System.CodeDom.dll",
         "build/netstandard1.0/Xamarin.Forms.Build.Tasks.dll",
         "build/netstandard1.0/Xamarin.Forms.Core.dll",
         "build/netstandard1.0/Xamarin.Forms.DefaultItems.props",
@@ -2149,42 +2132,33 @@
         "build/netstandard1.0/Xamarin.Forms.Xaml.dll",
         "build/netstandard1.0/Xamarin.Forms.props",
         "build/netstandard1.0/Xamarin.Forms.targets",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Mdb.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Pdb.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.Rocks.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Mono.Cecil.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Build.Tasks.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.DefaultItems.targets",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll",
-        "build/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.targets",
+        "build/netstandard2.0/Mono.Cecil.Mdb.dll",
+        "build/netstandard2.0/Mono.Cecil.Pdb.dll",
+        "build/netstandard2.0/Mono.Cecil.Rocks.dll",
+        "build/netstandard2.0/Mono.Cecil.dll",
+        "build/netstandard2.0/System.CodeDom.dll",
+        "build/netstandard2.0/Xamarin.Forms.Build.Tasks.dll",
+        "build/netstandard2.0/Xamarin.Forms.Core.dll",
+        "build/netstandard2.0/Xamarin.Forms.DefaultItems.props",
+        "build/netstandard2.0/Xamarin.Forms.DefaultItems.targets",
+        "build/netstandard2.0/Xamarin.Forms.Xaml.dll",
+        "build/netstandard2.0/Xamarin.Forms.props",
+        "build/netstandard2.0/Xamarin.Forms.targets",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Core.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.xml",
-        "lib/WP80/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/WP80/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/WP80/Xamarin.Forms.Core.dll",
-        "lib/WP80/Xamarin.Forms.Core.pdb",
-        "lib/WP80/Xamarin.Forms.Core.xml",
-        "lib/WP80/Xamarin.Forms.Platform.WP8.dll",
-        "lib/WP80/Xamarin.Forms.Platform.dll",
-        "lib/WP80/Xamarin.Forms.Xaml.dll",
-        "lib/WP80/Xamarin.Forms.Xaml.pdb",
-        "lib/WP80/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.Mac/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/Xamarin.Mac/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Core.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Platform.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Platform.macOS.dll",
@@ -2192,14 +2166,12 @@
         "lib/Xamarin.iOS10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/Xamarin.iOS10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll.mdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll.mdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/ar/Xamarin.Forms.Platform.iOS.resources.dll",
@@ -2239,25 +2211,32 @@
         "lib/netstandard1.0/Design/Xamarin.Forms.Core.Design.dll",
         "lib/netstandard1.0/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/netstandard1.0/Xamarin.Forms.Core.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Core.dll.mdb",
         "lib/netstandard1.0/Xamarin.Forms.Core.pdb",
         "lib/netstandard1.0/Xamarin.Forms.Core.xml",
         "lib/netstandard1.0/Xamarin.Forms.Platform.dll",
         "lib/netstandard1.0/Xamarin.Forms.Xaml.dll",
-        "lib/netstandard1.0/Xamarin.Forms.Xaml.dll.mdb",
         "lib/netstandard1.0/Xamarin.Forms.Xaml.pdb",
         "lib/netstandard1.0/Xamarin.Forms.Xaml.xml",
-        "lib/portable-win+net45+wp80+win81+wpa81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.dll.mdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.pdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Core.xml",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Platform.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.dll.mdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.pdb",
-        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/netstandard2.0/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Core.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Core.pdb",
+        "lib/netstandard2.0/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/Xamarin.Forms.Platform.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Xaml.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Xaml.pdb",
+        "lib/netstandard2.0/Xamarin.Forms.Xaml.xml",
+        "lib/tizen40/Design/Xamarin.Forms.Core.Design.dll",
+        "lib/tizen40/Design/Xamarin.Forms.Xaml.Design.dll",
+        "lib/tizen40/Xamarin.Forms.Core.dll",
+        "lib/tizen40/Xamarin.Forms.Core.pdb",
+        "lib/tizen40/Xamarin.Forms.Core.xml",
+        "lib/tizen40/Xamarin.Forms.Platform.Tizen.dll",
+        "lib/tizen40/Xamarin.Forms.Platform.Tizen.pdb",
+        "lib/tizen40/Xamarin.Forms.Platform.dll",
+        "lib/tizen40/Xamarin.Forms.Xaml.dll",
+        "lib/tizen40/Xamarin.Forms.Xaml.pdb",
+        "lib/tizen40/Xamarin.Forms.Xaml.xml",
         "lib/uap10.0/Design/Xamarin.Forms.Core.Design.dll",
         "lib/uap10.0/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/uap10.0/Xamarin.Forms.Core.dll",
@@ -2267,67 +2246,32 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsEmbeddedPageWrapper.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsFlyout.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsProgressBarStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/MasterDetailControlStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Resources.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/SliderStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Xamarin.Forms.Platform.UAP.xr.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "lib/win81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/win81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/win81/Xamarin.Forms.Core.dll",
-        "lib/win81/Xamarin.Forms.Core.xml",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.dll",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet.pri",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/FormsProgressBarStyle.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.dll",
-        "lib/win81/Xamarin.Forms.Platform.WinRT.pri",
-        "lib/win81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
-        "lib/win81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
-        "lib/win81/Xamarin.Forms.Platform.dll",
-        "lib/win81/Xamarin.Forms.Xaml.dll",
-        "lib/win81/Xamarin.Forms.Xaml.xml",
-        "lib/wpa81/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/wpa81/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/wpa81/Xamarin.Forms.Core.dll",
-        "lib/wpa81/Xamarin.Forms.Core.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.dll",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone.pri",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/FormsProgressBarStyle.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/FormsTextBoxStyle.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/PhoneResources.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Resources.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/SearchBox.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.Phone/Xamarin.Forms.Platform.WinRT.Phone.xr.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.dll",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT.pri",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT/StepperControl.xbf",
-        "lib/wpa81/Xamarin.Forms.Platform.WinRT/Xamarin.Forms.Platform.WinRT.xr.xml",
-        "lib/wpa81/Xamarin.Forms.Platform.dll",
-        "lib/wpa81/Xamarin.Forms.Xaml.dll",
-        "lib/wpa81/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.2.5.0.122203.nupkg.sha512",
+        "xamarin.forms.3.1.0.637273.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Acr.Notifications >= 4.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 11.0.2",
       "Prism.DryIoc.Forms >= 7.0.0.396",
+      "Xam.Plugins.Notifier >= 3.0.0",
       "Xam.Plugins.Settings >= 3.1.1",
-      "Xamarin.Forms >= 2.5.0.122203"
+      "Xamarin.Forms >= 3.1.0.637273"
     ]
   },
   "packageFolders": {
@@ -2371,10 +2315,6 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
-          "Acr.Notifications": {
-            "target": "Package",
-            "version": "[4.0.0, )"
-          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -2389,13 +2329,17 @@
             "target": "Package",
             "version": "[7.0.0.396, )"
           },
+          "Xam.Plugins.Notifier": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Xam.Plugins.Settings": {
             "target": "Package",
             "version": "[3.1.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[2.5.0.122203, )"
+            "version": "[3.1.0.637273, )"
           }
         },
         "imports": [

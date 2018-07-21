@@ -1,7 +1,6 @@
 ﻿using LearningAPIs;
 using OfflineWikipedia.Helpers;
 using OfflineWikipedia.Services;
-using Plugin.Notifications;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -182,9 +181,18 @@ namespace OfflineWikipedia.ViewModels
         /// <returns></returns>
          private async Task SendAlertOrNotification(string title, string text, string buttonText)
         {
-            _dialogService.DisplayAlertAsync(title, text, buttonText);
-            //TODO: Get the notifications working
-            //await CrossNotifications.Current.Send(new Notification() { Title=title, Message=text });
+            if (!App.IsInBackgrounded)
+            {
+                _dialogService.DisplayAlertAsync(title, text, buttonText);
+            }
+            else
+            {
+                _dialogService.DisplayAlertAsync(title, text, buttonText);
+                //TODO: Get the notifications working
+                //await CrossNotifications.Current.Send(new Notification { Title=title, Message=text, When=TimeSpan.FromSeconds(1)});
+                //await CrossNotifications.Current.Send(new Notification { Title="My Title", Message="My message for the notification" });
+                //CrossLocalNotifications.Current.Show(title, text);
+            }
         }
 
         /// <summary>

@@ -6,7 +6,7 @@
              x:Class="OfflineWikipedia.Views.AboutAppPage"
              Title="About YoWiki">
 
-    <ContentView Padding="10">
+    <ContentView Padding="15">
         <StackLayout>
             <Label Text="{Binding AboutText}" TextColor="DarkGray" />
         </StackLayout>

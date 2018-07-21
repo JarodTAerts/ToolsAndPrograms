@@ -24,9 +24,9 @@ namespace OfflineWikipedia.ViewModels
                 " and 100 % local.I didn't want to force people to make accounts, and I didnt want to store anyone's data. Therefore, this application is completely private. It will only communicate with the" +
                 " Wikipedia API.It will never communicate with any server that I have. I will never be able to see any of what you download or read on your device. YoWiki is simply an easy way to view wikipedia" +
                 " articles offline. This application is part of an open source git repository of various" +
-                " projects and tools I have made.This is the first real addition to that repository. If you have any interest in using any of my other tools, you probably wont find a use for them, or branching and" +
-                " developing any of them for yourself find them here: Link Goes Here. If you are interested in helping out with the development for the production version of this application please contact me" +
-                " at the email provided on the play store page.";
+                " projects and tools I have made. This is the first real addition to that repository. If you have any interest in using any of my other tools, you probably wont find a use for them, or branching and" +
+                " developing any of them for yourself find them here: https://github.com/JarodTAerts/ToolsAndPrograms.git. If you are interested in helping out with the development for the production version of this application please contact me" +
+                " at the email provided on the play store page. Thank you for downloading YoWiki. I hope you find a use for it. If you have suggestions for how to improve it please leave a review or email me.";
         }
 	}
 }
