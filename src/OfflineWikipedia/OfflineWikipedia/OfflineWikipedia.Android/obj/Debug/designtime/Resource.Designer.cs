@@ -26,7 +26,6 @@ namespace OfflineWikipedia.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::OfflineWikipedia.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::OfflineWikipedia.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2981,9 +2980,6 @@ namespace OfflineWikipedia.Droid
 			
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
-			
-			// aapt resource value: 0x7F010003
-			public const int plugin_lc_smallicon = 2130771971;
 			
 			// aapt resource value: 0x7F010002
 			public const int SplashScreen = 2130771970;

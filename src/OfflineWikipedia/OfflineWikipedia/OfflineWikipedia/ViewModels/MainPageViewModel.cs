@@ -1,6 +1,7 @@
 ﻿using LearningAPIs;
 using OfflineWikipedia.Helpers;
 using OfflineWikipedia.Services;
+using Plugin.Notifications;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -145,6 +146,8 @@ namespace OfflineWikipedia.ViewModels
                 //Because of limit in Wikipedia's API no more than 10,000 articles can be downloaded from one search query
                 if (SearchResult.Totalhits < 10000)
                 {
+                    await SendAlertOrNotification("Downloading your articles:","The articles will now be downloaded. You can leave the app. A notification will be sent when downloading is finished." +
+                        "\n Only aricles that you have not already saved will be downloaded to save time.", "Ok");
                     //Start activity indicator and Let them know what is happening
                     IsSearching = true;
                     ReturnedText = "Fetching the names of all articles from Wikipedia.";
@@ -152,10 +155,12 @@ namespace OfflineWikipedia.ViewModels
                     //Set the start time and get all the names of the articles to be downloaded, then log
                     DateTime startTime = DateTime.Now;
                     List<string> names = await APIServices.GetAllNamesFromSearch(EntryText, SearchResult.Totalhits);
+                    List<string> savedNames = await StorageService.GetNamesOfSavedArticles();
+                    List<string> namesToDownload = names.Where(n => !savedNames.Contains(HTMLHandler.ReplaceColons(n))).ToList();
                     Debug.WriteLine("Time to get Names (Seconds): " + GetMilliSecondsSinceStart(startTime));
 
                     //Actually download all the articles
-                    await DownloadAllArticlesFromList(names);
+                    await DownloadAllArticlesFromList(namesToDownload);
 
                     //Stop the activity indicator, set the returned text with some info and send an alert
                     IsSearching = false;
@@ -183,14 +188,16 @@ namespace OfflineWikipedia.ViewModels
         {
             if (!App.IsInBackgrounded)
             {
-                _dialogService.DisplayAlertAsync(title, text, buttonText);
+                Debug.WriteLine($"App is in foreground..................");
+                await _dialogService.DisplayAlertAsync(title, text, buttonText);
             }
             else
             {
-                _dialogService.DisplayAlertAsync(title, text, buttonText);
+                Debug.WriteLine($"App is in background. Should send a notificiation");
+                await _dialogService.DisplayAlertAsync(title, text, buttonText);
                 //TODO: Get the notifications working
                 //await CrossNotifications.Current.Send(new Notification { Title=title, Message=text, When=TimeSpan.FromSeconds(1)});
-                //await CrossNotifications.Current.Send(new Notification { Title="My Title", Message="My message for the notification" });
+                await CrossNotifications.Current.Send(new Notification { Title=title, Message=text });
                 //CrossLocalNotifications.Current.Show(title, text);
             }
         }
