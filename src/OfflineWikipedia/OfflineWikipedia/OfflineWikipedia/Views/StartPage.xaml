@@ -26,7 +26,8 @@
 
 
 
-                <Button Text="Add to Library" Grid.Row="1" TextColor="WhiteSmoke"
+
+                <Button Text="Add to Library" TextColor="WhiteSmoke" Grid.Row="1"
                     BackgroundColor="CornflowerBlue" Command="{Binding AddToLibraryButtonClickedCommand}"/>
                 <Button Text="Browse Library" Grid.Row="2" TextColor="WhiteSmoke"
                     BackgroundColor="CornflowerBlue" Command="{Binding BrowseLibraryButtonClickedCommand}"/>

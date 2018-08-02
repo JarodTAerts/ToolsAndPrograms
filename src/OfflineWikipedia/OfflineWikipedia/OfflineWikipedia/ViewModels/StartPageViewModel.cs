@@ -36,7 +36,7 @@ namespace OfflineWikipedia.ViewModels
             BrowseLibraryButtonClickedCommand = new DelegateCommand(OnBrowseLibrary);
             SettingsButtonClickedCommand = new DelegateCommand(OnSettings);
             MessageText = "Welcome to YoWiki, your one stop shot for offline wikipedia. With this app you are able" +
-                "to download and store locally wikipedia articles onnvarious topics of your choosing. To get started" +
+                "to download and store locally wikipedia articles on nvarious topics of your choosing. To get started" +
                 " just click the 'Add to Library' button and search anything you are interested in. You will be guided " +
                 "through the process and soon you will be able to browse your local wikipedia library!";
         }
