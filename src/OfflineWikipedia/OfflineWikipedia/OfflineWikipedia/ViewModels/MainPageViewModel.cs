@@ -197,7 +197,7 @@ namespace OfflineWikipedia.ViewModels
                 await _dialogService.DisplayAlertAsync(title, text, buttonText);
                 //TODO: Get the notifications working
                 //await CrossNotifications.Current.Send(new Notification { Title=title, Message=text, When=TimeSpan.FromSeconds(1)});
-                await CrossNotifications.Current.Send(new Notification { Title=title, Message=text });
+                //await CrossNotifications.Current.Send(new Notification { Title=title, Message=text });
                 //CrossLocalNotifications.Current.Show(title, text);
             }
         }
