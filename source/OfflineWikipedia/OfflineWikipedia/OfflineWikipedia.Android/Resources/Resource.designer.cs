@@ -4287,6 +4287,33 @@ namespace OfflineWikipedia.Droid
 			// aapt resource value: 0x7f0c005f
 			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131492959;
 			
+			// aapt resource value: 0x7f0c005a
+			public const int Base_TextAppearance_AppCompat_Title = 2131492954;
+			
+			// aapt resource value: 0x7f0c001f
+			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131492895;
+			
+			// aapt resource value: 0x7f0c00b1
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2131493041;
+			
+			// aapt resource value: 0x7f0c0095
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131493013;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131492956;
+			
+			// aapt resource value: 0x7f0c005d
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131492957;
+			
+			// aapt resource value: 0x7f0c005e
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131492958;
+			
+			// aapt resource value: 0x7f0c005f
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131492959;
+			
 			// aapt resource value: 0x7f0c0060
 			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131492960;
 			
